@@ -22,7 +22,7 @@ const GlowButton = forwardRef<HTMLButtonElement, GlowButtonProps>(
             "transition-colors duration-200",
             "hover:text-white",
             size === "sm" && "text-sm px-3 py-1.5",
-            size === "lg" && "text-lg px-6 py-3",
+            size === "lg" && "text-lg px-6 py-2",
             variant === "outline" && "bg-transparent border border-white/20",
             className
           )}
