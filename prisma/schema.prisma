@@ -13,3 +13,11 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model LeadMessage {
+  id      Int    @id @default(autoincrement())
+  name    String
+  phone   String
+  email   String
+  message String
+}
