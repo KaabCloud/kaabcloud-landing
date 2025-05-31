@@ -9,8 +9,8 @@ interface ContactProps {
 }
 
 export default function Contact({
-  title = "Contact Us",
-  description = "Get in touch with our team. We're here to help you with your business needs.",
+  title = "¿Listo para construir algo juntos?",
+  description = "Nos encantaría conocer tu proyecto. Creamos soluciones poderosas, útiles y rápidas",
   className,
 }: ContactProps) {
   return (
@@ -27,7 +27,7 @@ export default function Contact({
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="space-y-2">
               <label htmlFor="name" className="text-sm font-medium">
-                Name
+                Nombre
               </label>
               <input
                 type="text"
@@ -35,12 +35,12 @@ export default function Contact({
                 name="name"
                 required
                 className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                placeholder="Your name"
+                placeholder="Jonh Doe"
               />
             </div>
             <div className="space-y-2">
               <label htmlFor="phone" className="text-sm font-medium">
-                Phone
+                Teléfono
               </label>
               <input
                 type="tel"
@@ -48,14 +48,14 @@ export default function Contact({
                 name="phone"
                 required
                 className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                placeholder="Your phone number"
+                placeholder="4441234567"
               />
             </div>
           </div>
           
           <div className="space-y-2">
             <label htmlFor="email" className="text-sm font-medium">
-              Email
+              Correo
             </label>
             <input
               type="email"
@@ -63,13 +63,13 @@ export default function Contact({
               name="email"
               required
               className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-              placeholder="your.email@example.com"
+              placeholder="tu.corre@ejemplo.com"
             />
           </div>
           
           <div className="space-y-2">
             <label htmlFor="message" className="text-sm font-medium">
-              Message
+              Mensaje
             </label>
             <textarea
               id="message"
@@ -77,12 +77,12 @@ export default function Contact({
               required
               rows={4}
               className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-              placeholder="How can we help you?"
+              placeholder="Cuentamos sobre tu proyecto o idea que quieras realizar."
             />
           </div>
           
-          <Button type="submit" size="lg" className="w-full sm:w-auto">
-            Send Message
+          <Button type="submit" size="lg" className="w-full sm:w-auto hover:cursor-pointer">
+            Enviar mensaje
           </Button>
         </form>
       </div>
