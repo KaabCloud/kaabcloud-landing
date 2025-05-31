@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "./button";
 import Link from "next/link";
 
-interface CardProps {
+export interface CardProps {
   title: string;
   description?: string;
   icon?: React.ReactNode;
