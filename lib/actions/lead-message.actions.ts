@@ -5,7 +5,7 @@ import { Prisma } from "../generated/prisma";
 
 export async function createLeadMessage(leadMessageData: Prisma.LeadMessageCreateInput) {
   try {
-    const leadMessage = prisma.leadMessage.create({ data: leadMessageData })
+    const leadMessage = await prisma.leadMessage.create({ data: leadMessageData })
 
     return {
       data: leadMessage
