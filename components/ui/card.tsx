@@ -1,17 +1,65 @@
 import * as React from "react";
-
 import { cn } from "@/lib/utils";
+import { Button } from "./button";
+import Link from "next/link";
 
-function Card({ className, ...props }: React.ComponentProps<"div">) {
+interface CardProps {
+  title: string;
+  description?: string;
+  icon?: React.ReactNode;
+  variant?: "default" | "glow" | "glow-brand";
+  className?: string;
+  children?: React.ReactNode;
+  button?: {
+    variant?: "glow" | "default";
+    label: string;
+    href: string;
+  };
+}
+
+export function Card({
+  title,
+  description,
+  icon,
+  variant = "default",
+  className = "",
+  children,
+  button,
+}: CardProps) {
   return (
     <div
-      data-slot="card"
       className={cn(
-        "bg-card text-card-foreground rounded-xl border shadow-sm",
-        className,
+        "relative flex flex-col gap-6 overflow-hidden rounded-2xl p-8 shadow-xl",
+        {
+          "glass-1 to-transparent dark:glass-3": variant === "default",
+          "glass-2 to-trasparent dark:glass-3 after:content-[''] after:absolute after:-top-[128px] after:left-1/2 after:h-[128px] after:w-[100%] after:max-w-[960px] after:-translate-x-1/2 after:rounded-[50%] dark:after:bg-foreground/30 after:blur-[72px]": variant === "glow",
+          "glass-3 from-card/100 to-card/100 dark:glass-4 after:content-[''] after:absolute after:-top-[128px] after:left-1/2 after:h-[128px] after:w-[100%] after:max-w-[960px] after:-translate-x-1/2 after:rounded-[50%] after:bg-brand-foreground/70 after:blur-[72px]": variant === "glow-brand",
+        },
+        className
       )}
-      {...props}
-    />
+    >
+      <hr
+        className={cn(
+          "via-foreground/60 absolute top-0 left-[10%] h-[1px] w-[80%] border-0 bg-linear-to-r from-transparent to-transparent",
+          variant === "glow-brand" && "via-brand"
+        )}
+      />
+      <div className="relative flex flex-col gap-2">
+        <div className="flex items-center gap-2">
+          {icon && <div className="text-muted-foreground">{icon}</div>}
+          <h3 className="text-xl font-semibold">{title}</h3>
+        </div>
+        {description && (
+          <p className="text-sm text-muted-foreground">{description}</p>
+        )}
+      </div>
+      <div className="relative">{children}</div>
+      {button && (
+        <Button variant={button.variant || "default"} size="lg" asChild>
+          <Link href={button.href}>{button.label}</Link>
+        </Button>
+      )}
+    </div>
   );
 }
 
@@ -66,7 +114,6 @@ function CardFooter({ className, ...props }: React.ComponentProps<"div">) {
 }
 
 export {
-  Card,
   CardContent,
   CardDescription,
   CardFooter,
