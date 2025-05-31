@@ -86,7 +86,7 @@ export default function Hero({
             {description}
           </p>
           {buttons !== false && buttons.length > 0 && (
-            <div className="animate-appear relative z-10 flex justify-center gap-4 opacity-0 delay-300">
+            <div className="animate-appear relative z-10 flex justify-center gap-4 opacity-0 delay-300 items-center">
               {buttons.map((button, index) => (
                 button.variant === "glow" ? (
                   <GlowButton
