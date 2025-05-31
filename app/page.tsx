@@ -6,7 +6,7 @@ import Items from "../components/sections/items/default";
 import Logos from "../components/sections/logos/default";
 import Navbar from "../components/sections/navbar/default";
 import Stats from "../components/sections/stats/default";
-import Cards from "../components/sections/cards/default";
+import Projects from "../components/sections/projects/default";
 import AboutUs from "@/components/sections/about-us/default";
 
 export default function Home() {
@@ -17,7 +17,7 @@ export default function Home() {
       <Logos />
       <Items />
       <Stats />
-      <Cards />
+      <Projects />
       <AboutUs />
       <FAQ />
       <CTA />
