@@ -75,7 +75,7 @@ export default function Hero({
     <Section
       id={id}
       className={cn(
-        "overflow-hidden pb-0 sm:pb-0 md:pb-0",
+        "group relative overflow-visible pb-0 sm:pb-0 md:pb-0",
         mockup !== false && "fade-bottom",
         className,
       )}
@@ -152,6 +152,9 @@ export default function Hero({
             </div>
           )}
         </div>
+      </div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 h-full w-full translate-y-[1rem] opacity-80 transition-all duration-500 ease-in-out group-hover:translate-y-[-2rem] group-hover:opacity-100">
+        <Glow variant="center" />
       </div>
     </Section>
   );
