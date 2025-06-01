@@ -16,7 +16,7 @@ import { Section } from "../../ui/section";
 interface ItemProps {
   title: string;
   description: string;
-  icon: ReactNode;
+  icon?: ReactNode;
 }
 
 interface ItemsProps {
@@ -68,7 +68,7 @@ export default function Items({
           <div className="grid auto-rows-fr grid-cols-2 gap-0 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
             {items.map((item, index) => (
               <Item key={index}>
-                <ItemTitle className="flex items-center gap-2">
+                <ItemTitle className="text-sm">
                   <ItemIcon>{item.icon}</ItemIcon>
                   {item.title}
                 </ItemTitle>

@@ -36,7 +36,7 @@ export default function Projects({
       image: (
         <Image
           className='p-[6px] bg-transparent border-2 border-gray-100/25 rounded-[42px] backdrop-blur-lg animate-fade-in-up animate-delay-800 animate-duration-900'
-          src='/sislab-app-light.png'
+          src='/sislab-app-dark.png'
           alt='Dispositivo Movil'
           height={455}
           width={265}

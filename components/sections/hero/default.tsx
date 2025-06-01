@@ -1,18 +1,13 @@
-import { ArrowRightIcon } from "lucide-react";
 import { ReactNode } from "react";
-
 import { siteConfig } from "@/config/site";
-import { cn } from "@/lib/utils";
-
-import Github from "../../logos/github";
-import { Badge } from "../../ui/badge";
 import { Button, type ButtonProps } from "../../ui/button";
-import Glow from "../../ui/glow";
-import { GlowButton } from "../../ui/glow-button";
-import { Mockup, MockupFrame } from "../../ui/mockup";
-import Screenshot from "../../ui/screenshot";
-import { Section } from "../../ui/section";
 import Whatsapp from "@/components/logos/whatsapp";
+import { Mail } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { GlowButton } from "@/components/ui/glow-button";
+import { Mockup, MockupFrame } from "@/components/ui/mockup";
+import Glow from "@/components/ui/glow";
+import { Section } from "@/components/ui/section";
 
 interface HeroButtonProps {
   href: string;
@@ -83,9 +78,9 @@ export default function Hero({
     },
     {
       href: siteConfig.links.github,
-      text: "Github",
+      text: "Contactanos",
       variant: "glow",
-      icon: <Github className="mr-2 size-4" />,
+      icon: <Mail className="mr-2 size-4" />
     },
   ],
   className,

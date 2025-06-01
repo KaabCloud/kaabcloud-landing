@@ -16,14 +16,11 @@ export default function Home() {
     <main className="min-h-screen w-full overflow-hidden bg-background text-foreground">
       <Navbar />
       <Hero id="hero" mockup={false} badge={false}/>
-      <Logos id="logos" badge={false}/>
       <Items id="items" />
       <Stats id="stats" />
       <Projects id="projects" />
       <AboutUs id="about" />
-      <FAQ/>
       <Contact id="contact" />
-      <CTA id="cta" />
       <Footer />
     </main>
   );
