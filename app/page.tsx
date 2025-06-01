@@ -1,5 +1,6 @@
 import AboutUs from "@/components/sections/about-us/default";
 import Contact from "@/components/sections/contact/default";
+
 import CTA from "../components/sections/cta/default";
 import FAQ from "../components/sections/faq/default";
 import Footer from "../components/sections/footer/default";

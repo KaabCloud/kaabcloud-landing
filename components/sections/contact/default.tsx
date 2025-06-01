@@ -1,9 +1,11 @@
 'use client'
+import { useState } from "react";
+
+import { createLeadMessage } from "@/lib/actions/lead-message.actions";
 import { cn } from "@/lib/utils";
+
 import { Button } from "../../ui/button";
 import { Section } from "../../ui/section";
-import { createLeadMessage } from "@/lib/actions/lead-message.actions";
-import { useState } from "react";
 
 interface ContactProps {
   title?: string;
@@ -48,7 +50,7 @@ export default function Contact({
         form.reset(); // ← usamos la referencia guardada
       }
     } catch (err) {
-      setError("Ocurrió un error al enviar el mensaje. Por favor intenta de nuevo.");
+      setError(`Ocurrió un error al enviar el mensaje. Por favor intenta de nuevo. Mensaje: ${err}`);
     } finally {
       setIsLoading(false);
     }

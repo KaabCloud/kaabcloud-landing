@@ -1,9 +1,9 @@
-import { Palette, Zap } from "lucide-react";
 import Image from "next/image";
+
+import { cn } from "@/lib/utils";
 
 import { Card, CardProps,  } from "../../ui/card";
 import { Section } from "../../ui/section";
-import { cn } from "@/lib/utils";
 
 interface ProjectsProps {
   title?: string | false;
