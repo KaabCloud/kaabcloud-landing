@@ -9,9 +9,11 @@ interface ProjectsProps {
   description?: string | false;
   projects?: CardProps[] | false;
   className?: string;
+  id?: string;
 }
 
 export default function Projects({
+  id = 'projects',
   title = "Proyectos",
   description = false,
   projects = [
@@ -49,7 +51,7 @@ export default function Projects({
   className = "",
 }: ProjectsProps) {
   return (
-    <Section className={cn(className)}>
+    <Section className={cn(className)} id={id}>
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-12">
         {(title || description) && (
           <div className="flex flex-col items-center gap-4 px-4 text-center sm:gap-8">

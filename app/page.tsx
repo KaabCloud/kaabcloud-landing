@@ -14,15 +14,15 @@ export default function Home() {
   return (
     <main className="min-h-screen w-full overflow-hidden bg-background text-foreground">
       <Navbar />
-      <Hero />
-      <Logos />
-      <Items />
-      <Stats />
-      <Projects />
-      <AboutUs />
-      <FAQ />
-      <Contact />
-      <CTA />
+      <Hero id="hero"/>
+      <Logos id="logos" />
+      <Items id="items" />
+      <Stats id="stats" />
+      <Projects id="projects" />
+      <AboutUs id="about" />
+      <FAQ/>
+      <Contact id="contact" />
+      <CTA id="cta" />
       <Footer />
     </main>
   );

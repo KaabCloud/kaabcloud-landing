@@ -22,6 +22,7 @@ interface ItemProps {
 interface ItemsProps {
   title?: string;
   items?: ItemProps[] | false;
+  id?: string;
   className?: string;
 }
 
@@ -72,10 +73,11 @@ export default function Items({
       icon: <SquarePenIcon className="size-5 stroke-1" />,
     },
   ],
+  id,
   className,
 }: ItemsProps) {
   return (
-    <Section className={className}>
+    <Section id={id} className={className}>
       <div className="max-w-container mx-auto flex flex-col items-center gap-6 sm:gap-20">
         <h2 className="max-w-[560px] text-center text-3xl leading-tight font-semibold sm:text-5xl sm:leading-tight">
           {title}

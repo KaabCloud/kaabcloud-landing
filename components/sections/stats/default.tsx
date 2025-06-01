@@ -12,9 +12,11 @@ interface StatItemProps {
 interface StatsProps {
   items?: StatItemProps[] | false;
   className?: string;
+  id?: string;
 }
 
 export default function Stats({
+  id = 'stats',
   items = [
     {
       label: "used by",
@@ -42,7 +44,7 @@ export default function Stats({
   className,
 }: StatsProps) {
   return (
-    <Section className={className}>
+    <Section className={className} id={id}>
       <div className="container mx-auto max-w-[960px]">
         {items !== false && items.length > 0 && (
           <div className="grid grid-cols-2 gap-12 sm:grid-cols-4">

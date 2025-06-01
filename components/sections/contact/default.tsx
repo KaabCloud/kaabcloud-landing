@@ -9,9 +9,11 @@ interface ContactProps {
   title?: string;
   description?: string;
   className?: string;
+  id?: string;
 }
 
 export default function Contact({
+  id = 'contact',
   title = "¿Listo para construir algo juntos?",
   description = "Nos encantaría conocer tu proyecto. Creamos soluciones poderosas, útiles y rápidas",
   className,
@@ -54,7 +56,7 @@ export default function Contact({
 
 
   return (
-    <Section className={cn("group relative overflow-hidden", className)}>
+    <Section className={cn("group relative overflow-hidden", className)} id={id}>
       <div className="max-w-container relative z-10 mx-auto flex flex-col items-center gap-6 text-center sm:gap-8">
         <h2 className="max-w-[640px] text-3xl leading-tight font-semibold sm:text-5xl sm:leading-tight">
           {title}

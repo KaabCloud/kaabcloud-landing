@@ -28,9 +28,11 @@ interface HeroProps {
   badge?: ReactNode | false;
   buttons?: HeroButtonProps[] | false;
   className?: string;
+  id?: string;
 }
 
 export default function Hero({
+  id = 'hero',
   title = "Give your big idea the design it deserves",
   description = "Professionally designed blocks and templates built with React, Shadcn/ui and Tailwind that will help your product stand out.",
   mockup = (
@@ -71,6 +73,7 @@ export default function Hero({
 }: HeroProps) {
   return (
     <Section
+      id={id}
       className={cn(
         "fade-bottom overflow-hidden pb-0 sm:pb-0 md:pb-0",
         className,
