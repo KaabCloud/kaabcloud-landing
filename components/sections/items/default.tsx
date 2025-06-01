@@ -53,6 +53,7 @@ export default function Items({
     {
       title: "🌐 Presencia de tu Negocio en Línea",
       description: "Diseñamos y desarrollamos tu sitio web para que tengas visibilidad profesional y efectiva en internet."
+      //CAMBIOS
     },
   ],
   id,
