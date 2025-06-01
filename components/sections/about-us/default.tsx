@@ -26,7 +26,7 @@ export default function AboutUs({
               </h2>
             )}
             {description && (
-              <p className="text-md text-muted-foreground max-w-[600px] font-medium sm:text-xl">
+              <p className="text-md text-muted-foreground font-medium sm:text-xl">
                 {description}
               </p>
             )}
