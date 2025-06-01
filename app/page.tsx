@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <main className="min-h-screen w-full overflow-hidden bg-background text-foreground">
       <Navbar />
-      <Hero id="hero"/>
+      <Hero id="hero" mockup={false}/>
       <Logos id="logos" />
       <Items id="items" />
       <Stats id="stats" />

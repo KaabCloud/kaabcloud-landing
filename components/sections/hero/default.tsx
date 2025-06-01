@@ -75,21 +75,34 @@ export default function Hero({
     <Section
       id={id}
       className={cn(
-        "fade-bottom overflow-hidden pb-0 sm:pb-0 md:pb-0",
+        "overflow-hidden pb-0 sm:pb-0 md:pb-0",
+        mockup !== false && "fade-bottom",
         className,
       )}
     >
       <div className="max-w-container mx-auto flex flex-col gap-12 pt-16 sm:gap-24">
-        <div className="flex flex-col items-center gap-6 text-center sm:gap-12">
+        <div className={cn(
+          "flex flex-col items-center gap-6 text-center sm:gap-12",
+          mockup === false && "relative z-10"
+        )}>
           {badge !== false && badge}
-          <h1 className="animate-appear relative z-10 inline-block text-3xl leading-tight font-normal text-balance text-white drop-shadow-2xl sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight">
+          <h1 className={cn(
+            "animate-appear inline-block text-3xl leading-tight font-normal text-balance text-white drop-shadow-2xl sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight",
+            mockup === false ? "relative" : "relative z-10"
+          )}>
             {title}
           </h1>
-          <p className="text-sm animate-appear text-muted-foreground relative z-10 max-w-[740px] font-medium text-balance opacity-0 delay-100 sm:text-base">
+          <p className={cn(
+            "text-sm animate-appear text-muted-foreground max-w-[740px] font-medium text-balance opacity-0 delay-100 sm:text-base",
+            mockup === false ? "relative" : "relative z-10"
+          )}>
             {description}
           </p>
           {buttons !== false && buttons.length > 0 && (
-            <div className="animate-appear relative z-10 flex justify-center gap-4 opacity-0 delay-300 items-center">
+            <div className={cn(
+              "animate-appear flex justify-center gap-4 opacity-0 delay-300 items-center",
+              mockup === false ? "relative" : "relative z-10"
+            )}>
               {buttons.map((button, index) => (
                 button.variant === "glow" ? (
                   <GlowButton
