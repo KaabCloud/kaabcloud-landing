@@ -10,7 +10,7 @@ interface GlowButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 const GlowButton = forwardRef<HTMLButtonElement, GlowButtonProps>(
   ({ className, variant = "default", size = "default", ...props }, ref) => {
     return (
-      <div className="relative group">
+      <div className="relative group m-1">
         <div className="absolute -inset-0.5 rounded-lg overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-pink-500 to-transparent animate-shimmer"></div>
         </div>
