@@ -12,9 +12,11 @@ interface StatItemProps {
 interface StatsProps {
   items?: StatItemProps[] | false;
   className?: string;
+  id?: string;
 }
 
 export default function Stats({
+  id = 'stats',
   items = [
     {
       label: "Mas de ",
@@ -36,10 +38,7 @@ export default function Stats({
   className,
 }: StatsProps) {
   return (
-    <Section className={className}>
-      <h2 className="mb-20 text-center text-3xl font-bold sm:text-4xl md:text-5xl">
-        Nuestros numeros
-      </h2>
+    <Section className={className} id={id}>
       <div className="container mx-auto max-w-[960px]">
         {items !== false && items.length > 0 && (
             <div className="grid grid-cols-1 gap-10 sm:grid-cols-3 text-center">

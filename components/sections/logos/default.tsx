@@ -15,6 +15,7 @@ interface LogosProps {
   title?: string;
   badge?: ReactNode | false;
   logos?: ReactNode[] | false;
+  id?: string;
   className?: string;
 }
 
@@ -49,10 +50,11 @@ export default function Logos({
       badge="New"
     />,
   ],
+  id,
   className,
 }: LogosProps) {
   return (
-    <Section className={className}>
+    <Section id={id} className={className}>
       <div className="max-w-container mx-auto flex flex-col items-center gap-8 text-center">
         <div className="flex flex-col items-center gap-6">
           {badge !== false && badge}

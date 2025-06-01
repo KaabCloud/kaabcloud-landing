@@ -7,8 +7,8 @@ import { cn } from "@/lib/utils";
 import Github from "../../logos/github";
 import { Badge } from "../../ui/badge";
 import { Button, type ButtonProps } from "../../ui/button";
-import { GlowButton } from "../../ui/glow-button";
 import Glow from "../../ui/glow";
+import { GlowButton } from "../../ui/glow-button";
 import { Mockup, MockupFrame } from "../../ui/mockup";
 import Screenshot from "../../ui/screenshot";
 import { Section } from "../../ui/section";
@@ -29,6 +29,7 @@ interface HeroProps {
   badge?: ReactNode | false;
   buttons?: HeroButtonProps[] | false;
   className?: string;
+  id?: string;
 }
 
 export default function Hero({
@@ -91,8 +92,10 @@ export default function Hero({
 }: HeroProps) {
   return (
     <Section
+      // id={id}
       className={cn(
-        "fade-bottom overflow-hidden pb-0 sm:pb-0 md:pb-0",
+        "group relative overflow-visible pb-0 sm:pb-0 md:pb-0",
+        mockup !== false && "fade-bottom",
         className,
       )}
     >
@@ -102,7 +105,10 @@ export default function Hero({
           <h1 className="animate-appear relative z-10 inline-block text-3xl leading-tight font-normal text-balance text-white drop-shadow-2xl sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight">
             {title}
           </h1>
-          <p className="text-sm animate-appear text-muted-foreground relative z-10 max-w-[740px] font-medium text-balance opacity-0 delay-100 sm:text-base">
+          <p className={cn(
+            "text-sm animate-appear text-muted-foreground max-w-[740px] font-medium text-balance opacity-0 delay-100 sm:text-base",
+            mockup === false ? "relative" : "relative z-10"
+          )}>
             {description}
           </p>
           {buttons !== false && buttons.length > 0 && (
@@ -159,6 +165,9 @@ export default function Hero({
             </div>
           )}
         </div>
+      </div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 w-3/5 opacity-80 transition-all duration-500 ease-in-out group-hover:translate-y-[-2rem] group-hover:opacity-100">
+        <Glow variant="center" />
       </div>
     </Section>
   );
