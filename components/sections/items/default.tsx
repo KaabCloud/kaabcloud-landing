@@ -26,50 +26,32 @@ interface ItemsProps {
 }
 
 export default function Items({
-  title = "Everything you need. Nothing you don't.",
+  title = "Nuestros servicios",
   items = [
     {
-      title: "Accessibility first",
-      description: "Fully WCAG 2.0 compliant, made with best a11y practices",
-      icon: <ScanFaceIcon className="size-5 stroke-1" />,
+      title: "🛠 Desarrollo de Software a Medida",
+      description: "Creamos soluciones digitales totalmente personalizadas que se adaptan a las necesidades específicas de tu empresa."
     },
     {
-      title: "Responsive design",
-      description: "Looks and works great on any device and screen size",
-      icon: <MonitorSmartphoneIcon className="size-5 stroke-1" />,
+      title: "🤖 Marketing Digital con Herramientas de IA",
+      description: "Impulsa tus ventas y posicionamiento utilizando campañas inteligentes potenciadas por inteligencia artificial."
     },
     {
-      title: "Light and dark mode",
+      title: "🔄 Transformación Digital / Digitalización de Procesos",
       description:
-        "Seamless switching between color schemes, 6 themes included",
-      icon: <EclipseIcon className="size-5 stroke-1" />,
+        "Modernizamos tus operaciones con tecnología que optimiza tiempos, reduce errores y mejora la eficiencia.",
     },
     {
-      title: "Easy to customize",
-      description: "Flexible options to match your product or brand",
-      icon: <BlocksIcon className="size-5 stroke-1" />,
+      title: "🧠 Diagnóstico para Automatización de Procesos",
+      description: "Analizamos tus flujos actuales y detectamos oportunidades para automatizar tareas repetitivas y acelerar resultados."
     },
     {
-      title: "Top-level performance",
-      description: "Made for lightning-fast load times and smooth interactions",
-      icon: <FastForwardIcon className="size-5 stroke-1" />,
+      title: "💼 Consultoría Tecnológica Empresarial",
+      description: "Te asesoramos estratégicamente para que tomes decisiones tecnológicas que impulsen el crecimiento de tu negocio."
     },
     {
-      title: "Production ready",
-      description: "Thoroughly tested and launch-prepared",
-      icon: <RocketIcon className="size-5 stroke-1" />,
-    },
-    {
-      title: "Made for localisation",
-      description:
-        "Easy to implement support for multiple languages and regions",
-      icon: <LanguagesIcon className="size-5 stroke-1" />,
-    },
-    {
-      title: "CMS friendly",
-      description:
-        "Built to work with your any headless content management system",
-      icon: <SquarePenIcon className="size-5 stroke-1" />,
+      title: "🌐 Presencia de tu Negocio en Línea",
+      description: "Diseñamos y desarrollamos tu sitio web para que tengas visibilidad profesional y efectiva en internet."
     },
   ],
   className,
