@@ -12,6 +12,7 @@ import Glow from "../../ui/glow";
 import { Mockup, MockupFrame } from "../../ui/mockup";
 import Screenshot from "../../ui/screenshot";
 import { Section } from "../../ui/section";
+import Whatsapp from "@/components/logos/whatsapp";
 
 interface HeroButtonProps {
   href: string;
@@ -31,34 +32,53 @@ interface HeroProps {
 }
 
 export default function Hero({
-  title = "Give your big idea the design it deserves",
-  description = "Professionally designed blocks and templates built with React, Shadcn/ui and Tailwind that will help your product stand out.",
+  title = "Impulse su negocio con una solución digital avanzada y personalizada",
+  description = "En KaabCloud, ayudamos a las empresas a modernizarse con software inteligente y tecnología de vanguardia.",
   mockup = (
-    <Screenshot
-      srcLight="/app-light.png"
-      srcDark="/app-dark.png"
-      alt="Launch UI app screenshot"
-      width={1248}
-      height={765}
-      className="w-full"
-    />
+    // <Screenshot
+    //   srcLight="/app-light.png"
+    //   srcDark="/app-dark.png"
+    //   alt="Launch UI app screenshot"
+    //   width={1248}
+    //   height={765}
+    //   className="w-full"
+    // />
+
+    <div className="relative w-full pt-12">
+      <div className="animate-appear opacity-0 delay-700">
+      <video
+        width="100%"
+        height="500"
+        autoPlay
+        loop
+        muted
+        controls
+        className="rounded-xl border-0"
+      >
+        <source src="/videos/my-video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      </div>
+    </div>
   ),
-  badge = (
-    <Badge variant="outline" className="animate-appear">
-      <span className="text-muted-foreground">
-        New version of Launch UI is out!
-      </span>
-      <a href={siteConfig.getStartedUrl} className="flex items-center gap-1">
-        Get started
-        <ArrowRightIcon className="size-3" />
-      </a>
-    </Badge>
-  ),
+  // badge = (
+  //   <Badge variant="outline" className="animate-appear">
+  //     <span className="text-muted-foreground">
+  //       New version of Launch UI is out!
+  //     </span>
+  //     <a href={siteConfig.getStartedUrl} className="flex items-center gap-1">
+  //       Get started
+  //       <ArrowRightIcon className="size-3" />
+  //     </a>
+  //   </Badge>
+  // ),
+
   buttons = [
     {
-      href: siteConfig.getStartedUrl,
-      text: "Get Started",
+      href: "https://wa.me/4443778124?text='Hola, me interesa una consultoría gratuita:'",
+      text: "Consultoria gratuita",
       variant: "default",
+      icon: <Whatsapp className="mr-2 size-4" />
     },
     {
       href: siteConfig.links.github,
@@ -78,7 +98,7 @@ export default function Hero({
     >
       <div className="max-w-container mx-auto flex flex-col gap-12 pt-16 sm:gap-24">
         <div className="flex flex-col items-center gap-6 text-center sm:gap-12">
-          {badge !== false && badge}
+          {/* {badge !== false && badge} */}
           <h1 className="animate-appear relative z-10 inline-block text-3xl leading-tight font-normal text-balance text-white drop-shadow-2xl sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight">
             {title}
           </h1>
@@ -86,17 +106,18 @@ export default function Hero({
             {description}
           </p>
           {buttons !== false && buttons.length > 0 && (
-            <div className="animate-appear relative z-10 flex justify-center gap-4 opacity-0 delay-300 items-center">
+            <div className="animate-appear relative z-10 flex flex-col sm:flex-row justify-center gap-8 opacity-0 delay-300 items-center">
               {buttons.map((button, index) => (
                 button.variant === "glow" ? (
                   <GlowButton
                     key={index}
                     size="lg"
+                    className="w-full sm:w-auto"
                   >
                     <a href={button.href} className="flex items-center gap-2">
-                      {button.icon}
+                       {button.icon}
                       {button.text}
-                      {button.iconRight}
+                      
                     </a>
                   </GlowButton>
                 ) : (
@@ -105,11 +126,13 @@ export default function Hero({
                     variant={button.variant || "default"}
                     size="lg"
                     asChild
+                    className="w-full sm:w-auto"
+                    
                   >
                     <a href={button.href} className="flex items-center gap-2">
-                      {button.icon}
+                      { button.icon}
                       {button.text}
-                      {button.iconRight}
+                      
                     </a>
                   </Button>
                 )
