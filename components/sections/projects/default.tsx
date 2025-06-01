@@ -1,4 +1,5 @@
 import { Palette, Zap } from "lucide-react";
+import Image from "next/image";
 
 import { Card, CardProps,  } from "../../ui/card";
 import { Section } from "../../ui/section";
@@ -21,6 +22,7 @@ export default function Projects({
       title: "SISLAB",
       description: "CRM Personalizado para Laboratorios",
       variant: "glow-brand",
+      hasImage: true,
       button: {
         variant: "default",
         label: "Ver sitio",
@@ -30,6 +32,17 @@ export default function Projects({
         <p className="text-sm text-muted-foreground">
           Transformamos operaciones con una plataforma segura y hecha a medida para laboratorios clínicos.
         </p>
+      ),
+      image: (
+        <Image
+          className='p-[6px] bg-transparent border-2 border-gray-100/25 rounded-[42px] backdrop-blur-lg animate-fade-in-up animate-delay-800 animate-duration-900'
+          src='/sislab-app-light.png'
+          alt='Dispositivo Movil'
+          height={455}
+          width={265}
+          layout='fixed'
+          objectFit='contain'
+        />
       )
     },
     {
@@ -52,7 +65,7 @@ export default function Projects({
 }: ProjectsProps) {
   return (
     <Section className={cn(className)} id={id}>
-      <div className="mx-auto flex max-w-6xl flex-col items-center gap-12">
+      <div className="mx-auto flex max-w-3xl flex-col items-center gap-12">
         {(title || description) && (
           <div className="flex flex-col items-center gap-4 px-4 text-center sm:gap-8">
             {title && (
@@ -69,7 +82,7 @@ export default function Projects({
         )}
 
         {projects !== false && projects.length > 0 && (
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-8 w-full">
             {projects.map((project) => (
               <Card
                 key={project.title}
