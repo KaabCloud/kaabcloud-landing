@@ -14,9 +14,9 @@ import Stats from "../components/sections/stats/default";
 export default function Home() {
   return (
     <main className="min-h-screen w-full overflow-hidden bg-background text-foreground">
-      <Navbar />
-      <Hero id="hero" mockup={false} badge={false}/>
-      <Items id="items" />
+      <Navbar actions={[]}/>
+      <Hero id="hero" mockup={false} badge={false} />
+      <Items id="services" />
       <Stats id="stats" />
       <Projects id="projects" />
       <AboutUs id="about" />
