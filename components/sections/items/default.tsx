@@ -1,13 +1,5 @@
-import {
-  BlocksIcon,
-  EclipseIcon,
-  FastForwardIcon,
-  LanguagesIcon,
-  MonitorSmartphoneIcon,
-  RocketIcon,
-  ScanFaceIcon,
-  SquarePenIcon,
-} from "lucide-react";
+
+
 import { ReactNode } from "react";
 
 import { Item, ItemDescription,ItemIcon, ItemTitle } from "../../ui/item";
@@ -53,7 +45,6 @@ export default function Items({
     {
       title: "🌐 Presencia de tu Negocio en Línea",
       description: "Diseñamos y desarrollamos tu sitio web para que tengas visibilidad profesional y efectiva en internet."
-      //CAMBIOS
     },
   ],
   id,
