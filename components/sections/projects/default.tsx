@@ -34,7 +34,7 @@ export default function Projects({
         </p>
       ),
       image: <Image
-        className='p-[6px] bg-transparent border-2 border-gray-100/25 rounded-[42px] backdrop-blur-lg animate-fade-in-up animate-delay-800 animate-duration-900'
+        className='p-[6px] bg-transparent border-2 border-gray-100/25 rounded-[42px] backdrop-blur-lg transition-all duration-700 ease-out hover:scale-105'
         src='/sislab-app-dark.png'
         alt='Dispositivo Movil'
         height={455}
@@ -57,7 +57,7 @@ export default function Projects({
             Diseñado a medida para destacar sus proyectos y facilitar el contacto con nuevos clientes.
           </p>
           <Image
-            className='mx-auto m-8 rounded-[42px] backdrop-blur-lg animate-fade-in-up animate-delay-800 animate-duration-900'
+            className='mx-auto m-8 rounded-[42px] backdrop-blur-lg transition-all duration-700 ease-out hover:scale-105'
             src='/azz-cristal-overview.jpg'
             alt='Dispositivo Movil'
             height={265}
@@ -67,15 +67,6 @@ export default function Projects({
 
         </div>
       ),
-      // imageVertical: true,
-      // image: <Image
-      //   className='p-[6px] bg-transparent border-2 border-gray-100/25 rounded-[42px] backdrop-blur-lg animate-fade-in-up animate-delay-800 animate-duration-900'
-      //   src='/sislab-app-dark.png'
-      //   alt='Dispositivo Movil'
-      //   height={455}
-      //   width={265}
-      //   style={{ objectFit: 'contain' }}
-      // />
     }
   ],
   className = "",

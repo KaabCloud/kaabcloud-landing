@@ -240,3 +240,7 @@
 .animate-shimmer {
   animation: shimmer 2s linear infinite;
 }
+
+html {
+  scroll-behavior: smooth;
+}

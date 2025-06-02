@@ -66,7 +66,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" style={{ colorScheme: "dark" }} className="dark">
-      <body className={`${inter.className} bg-background antialiased`}>
+      <body className={`${inter.className} bg-background antialiased`} suppressHydrationWarning>
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>

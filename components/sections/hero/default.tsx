@@ -42,7 +42,7 @@ export default function Hero({
       className="w-full"
     />
 
-    
+
   ),
   // badge = (
   //   <Badge variant="outline" className="animate-appear">
@@ -74,89 +74,90 @@ export default function Hero({
 }: HeroProps) {
   return (
     <Section
-  className={cn(
-    "group h-screen relative overflow-visible pb-0 sm:pb-0 md:pb-0",
-    mockup !== false && "fade-bottom",
-    className,
-  )}
->
-  {/* Video de fondo */}
-  <video
-    className="absolute top-0 left-0 w-full h-full object-cover z-0"
-    src="/videos/background-video.mp4"
-    autoPlay
-    loop
-    muted
-    playsInline
-  />
-
-  {/* Capa negra con opacidad */}
-  <div className="absolute top-0 left-0 w-full h-full bg-black opacity-65 z-0" />
-
-  {/* Contenido principal */}
-  <div className="relative z-10 max-w-container mx-auto flex flex-col gap-12 pt-16 sm:gap-24">
-    <div className="flex flex-col items-center gap-6 text-center sm:gap-12">
-      <h1 className="animate-appear text-3xl leading-tight font-normal text-white drop-shadow-2xl sm:text-4xl md:text-5xl">
-        {title}
-      </h1>
-      <p className={cn(
-        "text-sm animate-appear  max-w-4xl font-medium text-balance opacity-0 delay-100 sm:text-base",
-        mockup === false ? "relative" : "relative z-10"
-      )}>
-        {description}
-      </p>
-      {buttons !== false && buttons.length > 0 && (
-        <div className="animate-appear relative z-10 flex flex-col sm:flex-row justify-center gap-8 opacity-0 delay-300 items-center pt-12">
-          {buttons.map((button, index) => (
-            button.variant === "glow" ? (
-              <GlowButton key={index} size="lg" className="w-full sm:w-auto">
-          <a href={button.href} className="flex items-center gap-2">
-            {button.icon}
-            {button.text}
-          </a>
-              </GlowButton>
-            ) : (
-              <Button
-          key={index}
-          variant={button.variant || "default"}
-          size="lg"
-          asChild
-          className="w-full sm:w-auto"
-              >
-          <a href={button.href} className="flex items-center gap-2">
-            {button.icon}
-            {button.text}
-          </a>
-              </Button>
-            )
-          ))}
-          
-        </div>
+      className={cn(
+        "group h-screen relative overflow-visible pb-0 sm:pb-0 md:pb-0",
+        mockup !== false && "fade-bottom",
+        className,
       )}
-      {/* GIF de flecha para scroll en versión móvil */}
-      <div className=" mt-8">
-              <button
-                className="mt-8 inline-flex items-center gap-2 text-white hover:text-white/80 transition-colors animate-bounce px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full"
-              >
-                <span className="text-base font-light">Ver detalles</span>
-                <ArrowDown className='h-8' />
-              </button>
+    >
+      {/* Video de fondo */}
+      <video
+        className="absolute top-0 left-0 w-full h-full object-cover z-0"
+        src="/videos/background-video.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+      />
+
+      {/* Capa negra con opacidad */}
+      <div className="absolute top-0 left-0 w-full h-full bg-black opacity-65 z-0" />
+
+      {/* Contenido principal */}
+      <div className="relative z-10 max-w-container mx-auto flex flex-col gap-12 pt-16 sm:gap-24">
+        <div className="flex flex-col items-center gap-6 text-center sm:gap-12">
+          <h1 className="animate-appear text-3xl leading-tight font-normal text-white drop-shadow-2xl sm:text-4xl md:text-5xl">
+            {title}
+          </h1>
+          <p className={cn(
+            "text-sm animate-appear  max-w-4xl font-medium text-balance opacity-0 delay-100 sm:text-base",
+            mockup === false ? "relative" : "relative z-10"
+          )}>
+            {description}
+          </p>
+          {buttons !== false && buttons.length > 0 && (
+            <div className="animate-appear relative z-10 flex flex-col sm:flex-row justify-center gap-8 opacity-0 delay-300 items-center pt-12">
+              {buttons.map((button, index) => (
+                button.variant === "glow" ? (
+                  <GlowButton key={index} size="lg" className="w-full sm:w-auto">
+                    <a href={button.href} className="flex items-center gap-2">
+                      {button.icon}
+                      {button.text}
+                    </a>
+                  </GlowButton>
+                ) : (
+                  <Button
+                    key={index}
+                    variant={button.variant || "default"}
+                    size="lg"
+                    asChild
+                    className="w-full sm:w-auto"
+                  >
+                    <a href={button.href} className="flex items-center gap-2">
+                      {button.icon}
+                      {button.text}
+                    </a>
+                  </Button>
+                )
+              ))}
+
+            </div>
+          )}
+          {/* GIF de flecha para scroll en versión móvil */}
+          <div className=" mt-8 animate-bounce">
+            <a
+              href="#services"
+              className="mt-8 inline-flex items-center gap-2 text-white hover:text-white/80 animate-appear px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full"
+            >
+              <span className="text-base font-light">Ver detalles</span>
+              <ArrowDown className='h-8' />
+            </a>
           </div>
-      {mockup !== false && (
-        <div className="relative w-full pt-12">
-          <MockupFrame className="animate-appear opacity-0 delay-700" size="small">
-            <Mockup className="bg-background/90 w-full rounded-xl border-0" type="responsive">
-              {mockup}
-            </Mockup>
-          </MockupFrame>
-          <Glow variant="top" className="animate-appear-zoom opacity-0 delay-1000" />
+          {mockup !== false && (
+            <div className="relative w-full pt-12">
+              <MockupFrame className="animate-appear opacity-0 delay-700" size="small">
+                <Mockup className="bg-background/90 w-full rounded-xl border-0" type="responsive">
+                  {mockup}
+                </Mockup>
+              </MockupFrame>
+              <Glow variant="top" className="animate-appear-zoom opacity-0 delay-1000" />
+            </div>
+          )}
         </div>
-      )}
-    </div>
-  </div>
+      </div>
 
-  
-</Section>
+
+    </Section>
 
   );
 }
