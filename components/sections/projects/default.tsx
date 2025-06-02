@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import { cn } from "@/lib/utils";
 
-import { Card, CardProps,  } from "../../ui/card";
+import { Card, CardProps, } from "../../ui/card";
 import { Section } from "../../ui/section";
 
 interface ProjectsProps {
@@ -22,7 +22,7 @@ export default function Projects({
       title: "SISLAB",
       description: "CRM Personalizado para Laboratorios",
       variant: "glow-brand",
-      hasImage: true,
+      imageVertical: true,
       button: {
         variant: "default",
         label: "Ver sitio",
@@ -33,32 +33,49 @@ export default function Projects({
           Transformamos operaciones con una plataforma segura y hecha a medida para laboratorios clínicos.
         </p>
       ),
-      image: (
-        <Image
-          className='p-[6px] bg-transparent border-2 border-gray-100/25 rounded-[42px] backdrop-blur-lg animate-fade-in-up animate-delay-800 animate-duration-900'
-          src='/sislab-app-dark.png'
-          alt='Dispositivo Movil'
-          height={455}
-          width={265}
-          layout='fixed'
-          objectFit='contain'
-        />
-      )
+      image: <Image
+        className='p-[6px] bg-transparent border-2 border-gray-100/25 rounded-[42px] backdrop-blur-lg animate-fade-in-up animate-delay-800 animate-duration-900'
+        src='/sislab-app-dark.png'
+        alt='Dispositivo Movil'
+        height={455}
+        width={265}
+        style={{ objectFit: 'contain' }}
+      />
     },
     {
-      title: "Enchanted Invites",
-      description: "Una plataforma ágil y elegante para crear invitaciones personalizadas.",
+      title: "AZZ Cristal",
+      description: "Impulsamos la presencia digital de una cristalería con un sitio web elegante y funcional.",
       variant: "glow",
       button: {
         variant: "default",
         label: "Ver sitio",
-        href: "#",
+        href: "https://azz-cristal.kaabcloud.com/",
       },
       children: (
-        <p className="text-sm text-muted-foreground">
-          Diseña, personaliza y comparte invitaciones digitales elegantes para el día más especial de tu vida
-        </p>
-      )
+        <div>
+          <p className="text-sm text-muted-foreground">
+            Diseñado a medida para destacar sus proyectos y facilitar el contacto con nuevos clientes.
+          </p>
+          <Image
+            className='mx-auto m-8 rounded-[42px] backdrop-blur-lg animate-fade-in-up animate-delay-800 animate-duration-900'
+            src='/azz-cristal-overview.jpg'
+            alt='Dispositivo Movil'
+            height={265}
+            width={455}
+            style={{ objectFit: 'contain' }}
+          />
+
+        </div>
+      ),
+      // imageVertical: true,
+      // image: <Image
+      //   className='p-[6px] bg-transparent border-2 border-gray-100/25 rounded-[42px] backdrop-blur-lg animate-fade-in-up animate-delay-800 animate-duration-900'
+      //   src='/sislab-app-dark.png'
+      //   alt='Dispositivo Movil'
+      //   height={455}
+      //   width={265}
+      //   style={{ objectFit: 'contain' }}
+      // />
     }
   ],
   className = "",
