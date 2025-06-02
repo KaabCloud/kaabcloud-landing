@@ -40,7 +40,6 @@ export default function FooterSection({
       links: [
         { text: "Proyectos", href: "#projects" },
         { text: "Estadísticas", href: "#stats" },
-        { text: "FAQ", href: "#faq" },
       ],
     },
     {
