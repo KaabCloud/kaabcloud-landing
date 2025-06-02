@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import * as React from "react";
-import { ReactNode } from "react";
+import Link from 'next/link';
+import * as React from 'react';
+import { ReactNode } from 'react';
 
-import { siteConfig } from "@/config/site";
-import { cn } from "@/lib/utils";
+import { siteConfig } from '@/config/site';
+import { cn } from '@/lib/utils';
 
-import LaunchUI from "../logos/launch-ui";
+import LaunchUI from '../logos/launch-ui';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -16,7 +16,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "./navigation-menu";
+} from './navigation-menu';
 
 interface ComponentItem {
   title: string;
@@ -48,88 +48,88 @@ interface NavigationProps {
 export default function Navigation({
   menuItems = [
     {
-      title: "Servicios",
+      title: 'Servicios',
       isLink: true,
       href: '#services',
     },
     {
-      title: "Estadisticas",
+      title: 'Estadisticas',
       isLink: true,
       href: '#stats',
     },
     {
-      title: "Projectos",
+      title: 'Projectos',
       isLink: true,
       href: '#projects',
     },
     {
-      title: "Nosotros",
+      title: 'Nosotros',
       isLink: true,
       href: '#about',
     },
     {
-      title: "Contacto",
+      title: 'Contacto',
       isLink: true,
       href: '#contact',
     },
   ],
   components = [
     {
-      title: "Alert Dialog",
-      href: "/docs/primitives/alert-dialog",
+      title: 'Alert Dialog',
+      href: '/docs/primitives/alert-dialog',
       description:
-        "A modal dialog that interrupts the user with important content and expects a response.",
+        'A modal dialog that interrupts the user with important content and expects a response.',
     },
     {
-      title: "Hover Card",
-      href: "/docs/primitives/hover-card",
+      title: 'Hover Card',
+      href: '/docs/primitives/hover-card',
       description:
-        "For sighted users to preview content available behind a link.",
+        'For sighted users to preview content available behind a link.',
     },
     {
-      title: "Progress",
-      href: "/docs/primitives/progress",
+      title: 'Progress',
+      href: '/docs/primitives/progress',
       description:
-        "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+        'Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.',
     },
     {
-      title: "Scroll-area",
-      href: "/docs/primitives/scroll-area",
-      description: "Visually or semantically separates content.",
+      title: 'Scroll-area',
+      href: '/docs/primitives/scroll-area',
+      description: 'Visually or semantically separates content.',
     },
     {
-      title: "Tabs",
-      href: "/docs/primitives/tabs",
+      title: 'Tabs',
+      href: '/docs/primitives/tabs',
       description:
-        "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+        'A set of layered sections of content—known as tab panels—that are displayed one at a time.',
     },
     {
-      title: "Tooltip",
-      href: "/docs/primitives/tooltip",
+      title: 'Tooltip',
+      href: '/docs/primitives/tooltip',
       description:
-        "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+        'A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.',
     },
   ],
   logo = <LaunchUI />,
-  logoTitle = "Launch UI",
-  logoDescription = "Landing page template built with React, Shadcn/ui and Tailwind that you can copy/paste into your project.",
+  logoTitle = 'Launch UI',
+  logoDescription = 'Landing page template built with React, Shadcn/ui and Tailwind that you can copy/paste into your project.',
   logoHref = siteConfig.url,
   introItems = [
     {
-      title: "Introduction",
+      title: 'Introduction',
       href: siteConfig.url,
       description:
-        "Re-usable components built using Radix UI and Tailwind CSS.",
+        'Re-usable components built using Radix UI and Tailwind CSS.',
     },
     {
-      title: "Installation",
+      title: 'Installation',
       href: siteConfig.url,
-      description: "How to install dependencies and structure your app.",
+      description: 'How to install dependencies and structure your app.',
     },
     {
-      title: "Typography",
+      title: 'Typography',
       href: siteConfig.url,
-      description: "Styles for headings, paragraphs, lists...etc",
+      description: 'Styles for headings, paragraphs, lists...etc',
     },
   ],
 }: NavigationProps) {
@@ -139,7 +139,7 @@ export default function Navigation({
         {menuItems.map((item, index) => (
           <NavigationMenuItem key={index}>
             {item.isLink ? (
-              <Link href={item.href || ""} legacyBehavior passHref>
+              <Link href={item.href || ''} legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                   {item.title}
                 </NavigationMenuLink>
@@ -148,7 +148,7 @@ export default function Navigation({
               <>
                 <NavigationMenuTrigger>{item.title}</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  {item.content === "default" ? (
+                  {item.content === 'default' ? (
                     <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                       <li className="row-span-3">
                         <NavigationMenuLink asChild>
@@ -172,7 +172,7 @@ export default function Navigation({
                         </ListItem>
                       ))}
                     </ul>
-                  ) : item.content === "components" ? (
+                  ) : item.content === 'components' ? (
                     <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                       {components.map((component) => (
                         <ListItem
@@ -202,15 +202,15 @@ function ListItem({
   title,
   children,
   ...props
-}: React.ComponentProps<"a"> & { title: string }) {
+}: React.ComponentProps<'a'> & { title: string }) {
   return (
     <li>
       <NavigationMenuLink asChild>
         <a
           data-slot="list-item"
           className={cn(
-            "hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground block space-y-1 rounded-md p-3 leading-none no-underline outline-hidden transition-colors select-none",
-            className,
+            'hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground block space-y-1 rounded-md p-3 leading-none no-underline outline-hidden transition-colors select-none',
+            className
           )}
           {...props}
         >

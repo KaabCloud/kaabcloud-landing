@@ -1,11 +1,11 @@
-'use client'
-import { useState } from "react";
+'use client';
+import { useState } from 'react';
 
-import { createLeadMessage } from "@/lib/actions/lead-message.actions";
-import { cn } from "@/lib/utils";
+import { createLeadMessage } from '@/lib/actions/lead-message.actions';
+import { cn } from '@/lib/utils';
 
-import { Button } from "../../ui/button";
-import { Section } from "../../ui/section";
+import { Button } from '../../ui/button';
+import { Section } from '../../ui/section';
 
 interface ContactProps {
   title?: string;
@@ -16,8 +16,8 @@ interface ContactProps {
 
 export default function Contact({
   id = 'contact',
-  title = "¿Listo para construir algo juntos?",
-  description = "Nos encantaría conocer tu proyecto. Creamos soluciones poderosas, útiles y rápidas",
+  title = '¿Listo para construir algo juntos?',
+  description = 'Nos encantaría conocer tu proyecto. Creamos soluciones poderosas, útiles y rápidas',
   className,
 }: ContactProps) {
   const [isLoading, setIsLoading] = useState(false);
@@ -35,10 +35,10 @@ export default function Contact({
 
     const formData = new FormData(form);
     const data = {
-      name: formData.get("name") as string,
-      phone: formData.get("phone") as string,
-      email: formData.get("email") as string,
-      message: formData.get("message") as string,
+      name: formData.get('name') as string,
+      phone: formData.get('phone') as string,
+      email: formData.get('email') as string,
+      message: formData.get('message') as string,
     };
 
     try {
@@ -50,15 +50,19 @@ export default function Contact({
         form.reset(); // ← usamos la referencia guardada
       }
     } catch (err) {
-      setError(`Ocurrió un error al enviar el mensaje. Por favor intenta de nuevo. Mensaje: ${err}`);
+      setError(
+        `Ocurrió un error al enviar el mensaje. Por favor intenta de nuevo. Mensaje: ${err}`
+      );
     } finally {
       setIsLoading(false);
     }
   }
 
-
   return (
-    <Section className={cn("group relative overflow-hidden", className)} id={id}>
+    <Section
+      className={cn('group relative overflow-hidden', className)}
+      id={id}
+    >
       <div className="max-w-container relative z-10 mx-auto flex flex-col items-center gap-6 text-center sm:gap-8">
         <h2 className="max-w-[640px] text-3xl leading-tight font-semibold sm:text-5xl sm:leading-tight">
           {title}
@@ -67,7 +71,10 @@ export default function Contact({
           {description}
         </p>
 
-        <form onSubmit={handleSubmit} className="w-full max-w-[600px] space-y-6">
+        <form
+          onSubmit={handleSubmit}
+          className="w-full max-w-[600px] space-y-6"
+        >
           {error && (
             <div className="rounded-md bg-destructive/15 p-3 text-sm text-destructive">
               {error}
@@ -76,7 +83,8 @@ export default function Contact({
 
           {success && (
             <div className="rounded-md bg-green-500/15 p-3 text-sm text-green-500">
-              ¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.
+              ¡Mensaje enviado con éxito! Nos pondremos en contacto contigo
+              pronto.
             </div>
           )}
 
@@ -147,10 +155,10 @@ export default function Contact({
             className="w-full sm:w-auto hover:cursor-pointer"
             disabled={isLoading}
           >
-            {isLoading ? "Enviando..." : "Enviar mensaje"}
+            {isLoading ? 'Enviando...' : 'Enviar mensaje'}
           </Button>
         </form>
       </div>
     </Section>
   );
-} 
+}

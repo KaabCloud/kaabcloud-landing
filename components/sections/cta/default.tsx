@@ -1,16 +1,16 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
-import { siteConfig } from "@/config/site";
-import { cn } from "@/lib/utils";
+import { siteConfig } from '@/config/site';
+import { cn } from '@/lib/utils';
 
-import { Button, type ButtonProps } from "../../ui/button";
-import Glow from "../../ui/glow";
-import { Section } from "../../ui/section";
+import { Button, type ButtonProps } from '../../ui/button';
+import Glow from '../../ui/glow';
+import { Section } from '../../ui/section';
 
 interface CTAButtonProps {
   href: string;
   text: string;
-  variant?: ButtonProps["variant"];
+  variant?: ButtonProps['variant'];
   icon?: ReactNode;
   iconRight?: ReactNode;
 }
@@ -23,19 +23,22 @@ interface CTAProps {
 }
 
 export default function CTA({
-  title = "Start building",
+  title = 'Start building',
   buttons = [
     {
       href: siteConfig.getStartedUrl,
-      text: "Get Started",
-      variant: "default",
+      text: 'Get Started',
+      variant: 'default',
     },
   ],
   id,
   className,
 }: CTAProps) {
   return (
-    <Section id={id} className={cn("group relative overflow-hidden", className)}>
+    <Section
+      id={id}
+      className={cn('group relative overflow-hidden', className)}
+    >
       <div className="max-w-container relative z-10 mx-auto flex flex-col items-center gap-6 text-center sm:gap-8">
         <h2 className="max-w-[640px] text-3xl leading-tight font-semibold sm:text-5xl sm:leading-tight">
           {title}
@@ -45,7 +48,7 @@ export default function CTA({
             {buttons.map((button, index) => (
               <Button
                 key={index}
-                variant={button.variant || "default"}
+                variant={button.variant || 'default'}
                 size="lg"
                 asChild
               >

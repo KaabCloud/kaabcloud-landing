@@ -1,11 +1,11 @@
-import "@/app/globals.css";
+import '@/app/globals.css';
 
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 
-import { ThemeProvider } from "@/components/contexts/theme-provider";
-import { inter } from "@/lib/fonts";
+import { ThemeProvider } from '@/components/contexts/theme-provider';
+import { inter } from '@/lib/fonts';
 
-import { siteConfig } from "../config/site";
+import { siteConfig } from '../config/site';
 
 export const metadata: Metadata = {
   title: {
@@ -15,24 +15,24 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.getStartedUrl),
   description: siteConfig.description,
   keywords: [
-    "Landing page template",
-    "Components",
-    "Shadcn",
-    "Next.js",
-    "React",
-    "Tailwind CSS",
-    "Radix UI",
+    'Landing page template',
+    'Components',
+    'Shadcn',
+    'Next.js',
+    'React',
+    'Tailwind CSS',
+    'Radix UI',
   ],
   authors: [
     {
-      name: "Mikolaj Dobrucki",
-      url: "https://mikolajdobrucki.com",
+      name: 'Mikolaj Dobrucki',
+      url: 'https://mikolajdobrucki.com',
     },
   ],
-  creator: "mikolajdobrucki",
+  creator: 'mikolajdobrucki',
   openGraph: {
-    type: "website",
-    locale: "en_US",
+    type: 'website',
+    locale: 'en_US',
     url: siteConfig.getStartedUrl,
     title: siteConfig.name,
     description: siteConfig.description,
@@ -47,15 +47,15 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    card: "summary_large_image",
+    card: 'summary_large_image',
     title: siteConfig.name,
     description: siteConfig.description,
     images: [siteConfig.ogImage],
-    creator: "@mikolajdobrucki",
+    creator: '@mikolajdobrucki',
   },
   icons: {
-    icon: "/favicon.svg",
-    apple: "/apple-touch-icon.png",
+    icon: '/favicon.svg',
+    apple: '/apple-touch-icon.png',
   },
 };
 
@@ -65,8 +65,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" style={{ colorScheme: "dark" }} className="dark">
-      <body className={`${inter.className} bg-background antialiased`} suppressHydrationWarning>
+    <html lang="en" style={{ colorScheme: 'dark' }} className="dark">
+      <body
+        className={`${inter.className} bg-background antialiased`}
+        suppressHydrationWarning
+      >
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>

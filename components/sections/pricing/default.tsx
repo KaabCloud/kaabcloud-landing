@@ -1,10 +1,10 @@
-import { User, Users } from "lucide-react";
+import { User, Users } from 'lucide-react';
 
-import { siteConfig } from "@/config/site";
-import { cn } from "@/lib/utils";
+import { siteConfig } from '@/config/site';
+import { cn } from '@/lib/utils';
 
-import { PricingColumn, PricingColumnProps } from "../../ui/pricing-column";
-import { Section } from "../../ui/section";
+import { PricingColumn, PricingColumnProps } from '../../ui/pricing-column';
+import { Section } from '../../ui/section';
 
 interface PricingProps {
   title?: string | false;
@@ -14,36 +14,36 @@ interface PricingProps {
 }
 
 export default function Pricing({
-  title = "Build your dream landing page, today.",
-  description = "Get lifetime access to all the components. No recurring fees. Just simple, transparent pricing.",
+  title = 'Build your dream landing page, today.',
+  description = 'Get lifetime access to all the components. No recurring fees. Just simple, transparent pricing.',
   plans = [
     {
-      name: "Free",
-      description: "For everyone starting out on a website for their big idea",
+      name: 'Free',
+      description: 'For everyone starting out on a website for their big idea',
       price: 0,
-      priceNote: "Free and open-source forever.",
+      priceNote: 'Free and open-source forever.',
       cta: {
-        variant: "glow",
-        label: "Get started for free",
-        href: "/docs/getting-started/introduction",
+        variant: 'glow',
+        label: 'Get started for free',
+        href: '/docs/getting-started/introduction',
       },
       features: [
-        "1 website template",
-        "9 blocks and sections",
-        "4 custom animations",
+        '1 website template',
+        '9 blocks and sections',
+        '4 custom animations',
       ],
-      variant: "default",
-      className: "hidden lg:flex",
+      variant: 'default',
+      className: 'hidden lg:flex',
     },
     {
-      name: "Pro",
+      name: 'Pro',
       icon: <User className="size-4" />,
-      description: "For early-stage founders, solopreneurs and indie devs",
+      description: 'For early-stage founders, solopreneurs and indie devs',
       price: 99,
-      priceNote: "Lifetime access. Free updates. No recurring fees.",
+      priceNote: 'Lifetime access. Free updates. No recurring fees.',
       cta: {
-        variant: "default",
-        label: "Get all-access",
+        variant: 'default',
+        label: 'Get all-access',
         href: siteConfig.pricing.pro,
       },
       features: [
@@ -53,26 +53,26 @@ export default function Pricing({
         `${siteConfig.stats.illustrations} illustrations`,
         `${siteConfig.stats.animations} custom animations`,
       ],
-      variant: "glow-brand",
+      variant: 'glow-brand',
     },
     {
-      name: "Pro Team",
+      name: 'Pro Team',
       icon: <Users className="size-4" />,
-      description: "For teams and agencies working on cool products together",
+      description: 'For teams and agencies working on cool products together',
       price: 499,
-      priceNote: "Lifetime access. Free updates. No recurring fees.",
+      priceNote: 'Lifetime access. Free updates. No recurring fees.',
       cta: {
-        variant: "default",
-        label: "Get all-access for your team",
+        variant: 'default',
+        label: 'Get all-access for your team',
         href: siteConfig.pricing.team,
       },
       features: [
-        "All the templates, components and sections available for your entire team",
+        'All the templates, components and sections available for your entire team',
       ],
-      variant: "glow",
+      variant: 'glow',
     },
   ],
-  className = "",
+  className = '',
 }: PricingProps) {
   return (
     <Section className={cn(className)}>

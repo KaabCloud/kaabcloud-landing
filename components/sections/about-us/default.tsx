@@ -1,6 +1,6 @@
-import { cn } from "@/lib/utils";
+import { cn } from '@/lib/utils';
 
-import { Section } from "../../ui/section";
+import { Section } from '../../ui/section';
 
 interface AboutUsProps {
   title?: string | false;
@@ -11,9 +11,9 @@ interface AboutUsProps {
 
 export default function AboutUs({
   id = 'about-us',
-  title = "Convertimos ideas en productos digitales funcionales.",
-  description = "En KaabCloud creemos que la tecnología no solo debe estar al alcance de las grandes corporaciones. Nuestra misión es que todas las empresas, sin importar su tamaño, tengan acceso a soluciones digitales inteligentes, personalizadas y escalables, que les permitan competir, innovar y crecer.",
-  className = "",
+  title = 'Convertimos ideas en productos digitales funcionales.',
+  description = 'En KaabCloud creemos que la tecnología no solo debe estar al alcance de las grandes corporaciones. Nuestra misión es que todas las empresas, sin importar su tamaño, tengan acceso a soluciones digitales inteligentes, personalizadas y escalables, que les permitan competir, innovar y crecer.',
+  className = '',
 }: AboutUsProps) {
   return (
     <Section className={cn(className)} id={id}>

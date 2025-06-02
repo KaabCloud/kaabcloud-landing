@@ -1,18 +1,18 @@
-import { Menu } from "lucide-react";
-import { ReactNode } from "react";
+import { Menu } from 'lucide-react';
+import { ReactNode } from 'react';
 
-import { siteConfig } from "@/config/site";
-import { cn } from "@/lib/utils";
+import { siteConfig } from '@/config/site';
+import { cn } from '@/lib/utils';
 
-import LaunchUI from "../../logos/launch-ui";
-import { Button, type ButtonProps } from "../../ui/button";
+import LaunchUI from '../../logos/launch-ui';
+import { Button, type ButtonProps } from '../../ui/button';
 import {
   Navbar as NavbarComponent,
   NavbarLeft,
   NavbarRight,
-} from "../../ui/navbar";
-import Navigation from "../../ui/navigation";
-import { Sheet, SheetContent, SheetTrigger } from "../../ui/sheet";
+} from '../../ui/navbar';
+import Navigation from '../../ui/navigation';
+import { Sheet, SheetContent, SheetTrigger } from '../../ui/sheet';
 
 interface NavbarLink {
   text: string;
@@ -22,7 +22,7 @@ interface NavbarLink {
 interface NavbarActionProps {
   text: string;
   href: string;
-  variant?: ButtonProps["variant"];
+  variant?: ButtonProps['variant'];
   icon?: ReactNode;
   iconRight?: ReactNode;
   isButton?: boolean;
@@ -41,37 +41,37 @@ interface NavbarProps {
 
 export default function Navbar({
   logo = <LaunchUI />,
-  name = "KaabCloud",
+  name = 'KaabCloud',
   homeUrl = siteConfig.url,
   mobileLinks = [
     {
-      text: "Servicios",
+      text: 'Servicios',
       href: '#services',
     },
     {
-      text: "Estadisticas",
+      text: 'Estadisticas',
       href: '#stats',
     },
     {
-      text: "Projectos",
+      text: 'Projectos',
       href: '#projects',
     },
     {
-      text: "Nosotros",
+      text: 'Nosotros',
       href: '#about',
     },
     {
-      text: "Contacto",
+      text: 'Contacto',
       href: '#contact',
     },
   ],
   actions = [
-    { text: "Sign in", href: siteConfig.url, isButton: false },
+    { text: 'Sign in', href: siteConfig.url, isButton: false },
     {
-      text: "Get Started",
+      text: 'Get Started',
       href: siteConfig.url,
       isButton: true,
-      variant: "default",
+      variant: 'default',
     },
   ],
   showNavigation = true,
@@ -79,7 +79,7 @@ export default function Navbar({
   className,
 }: NavbarProps) {
   return (
-    <header className={cn("sticky top-0 z-50 -mb-4 px-4 pb-4", className)}>
+    <header className={cn('sticky top-0 z-50 -mb-4 px-4 pb-4', className)}>
       <div className="fade-bottom bg-background/15 absolute left-0 h-24 w-full backdrop-blur-lg"></div>
       <div className="max-w-container relative mx-auto">
         <NavbarComponent>
@@ -98,7 +98,7 @@ export default function Navbar({
               action.isButton ? (
                 <Button
                   key={index}
-                  variant={action.variant || "default"}
+                  variant={action.variant || 'default'}
                   asChild
                 >
                   <a href={action.href}>
@@ -115,7 +115,7 @@ export default function Navbar({
                 >
                   {action.text}
                 </a>
-              ),
+              )
             )}
             <Sheet>
               <SheetTrigger asChild>

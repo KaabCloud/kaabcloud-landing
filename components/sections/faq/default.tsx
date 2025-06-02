@@ -1,15 +1,15 @@
-import Link from "next/link";
-import { ReactNode } from "react";
+import Link from 'next/link';
+import { ReactNode } from 'react';
 
-import { siteConfig } from "@/config/site";
+import { siteConfig } from '@/config/site';
 
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "../../ui/accordion";
-import { Section } from "../../ui/section";
+} from '../../ui/accordion';
+import { Section } from '../../ui/section';
 
 interface FAQItemProps {
   question: string;
@@ -24,11 +24,11 @@ interface FAQProps {
 }
 
 export default function FAQ({
-  title = "Questions and Answers",
+  title = 'Questions and Answers',
   items = [
     {
       question:
-        "Why building a great landing page is critical for your business?",
+        'Why building a great landing page is critical for your business?',
       answer: (
         <>
           <p className="text-muted-foreground mb-4 max-w-[640px] text-balance">
@@ -43,7 +43,7 @@ export default function FAQ({
       ),
     },
     {
-      question: "Why use Launch UI instead of a no-code tool?",
+      question: 'Why use Launch UI instead of a no-code tool?',
       answer: (
         <>
           <p className="text-muted-foreground mb-4 max-w-[600px]">
@@ -66,7 +66,7 @@ export default function FAQ({
     },
     {
       question:
-        "How Launch UI is different from other components libraries and templates?",
+        'How Launch UI is different from other components libraries and templates?',
       answer: (
         <>
           <p className="text-muted-foreground mb-4 max-w-[580px]">
@@ -100,7 +100,7 @@ export default function FAQ({
             projects - no recurring fees or restrictions.
           </p>
           <p className="text-muted-foreground mb-4 max-w-[580px]">
-            For complete details about licensing and usage rights, check out{" "}
+            For complete details about licensing and usage rights, check out{' '}
             <Link href="/pricing" className="text-foreground underline">
               the pricing page
             </Link>
@@ -110,10 +110,10 @@ export default function FAQ({
       ),
     },
     {
-      question: "Are Figma files included?",
+      question: 'Are Figma files included?',
       answer: (
         <p className="text-muted-foreground mb-4 max-w-[580px]">
-          Yes! The complete Launch UI template is available for free on the{" "}
+          Yes! The complete Launch UI template is available for free on the{' '}
           <Link
             href="https://www.figma.com/community/file/1420131743903900629/launch-ui-landing-page-components-ui-kit"
             className="text-foreground underline"
@@ -125,13 +125,13 @@ export default function FAQ({
       ),
     },
     {
-      question: "Can I get a discount?",
+      question: 'Can I get a discount?',
       answer: (
         <>
           <p className="text-muted-foreground mb-4 max-w-[580px]">
             Actually, yes! I&apos;m always acively looking for beta testers of
             new features. If you are interested in exchanging feedback for a
-            discount, please contact me via{" "}
+            discount, please contact me via{' '}
             <a
               href={siteConfig.links.email}
               className="underline underline-offset-2"

@@ -1,9 +1,9 @@
-import Image from "next/image";
+import Image from 'next/image';
 
-import { cn } from "@/lib/utils";
+import { cn } from '@/lib/utils';
 
-import { Card, CardProps, } from "../../ui/card";
-import { Section } from "../../ui/section";
+import { Card, CardProps } from '../../ui/card';
+import { Section } from '../../ui/section';
 
 interface ProjectsProps {
   title?: string | false;
@@ -15,61 +15,64 @@ interface ProjectsProps {
 
 export default function Projects({
   id = 'projects',
-  title = "Proyectos",
+  title = 'Proyectos',
   description = false,
   projects = [
     {
-      title: "SISLAB",
-      description: "CRM Personalizado para Laboratorios",
-      variant: "glow-brand",
-      imageVertical: true,
+      title: 'SISLAB',
+      description: 'CRM Personalizado para Laboratorios',
+      variant: 'glow-brand',
       button: {
-        variant: "default",
-        label: "Ver sitio",
-        href: "https://www.sislab.life",
+        variant: 'default',
+        label: 'Ver sitio',
+        href: 'https://www.sislab.life',
       },
       children: (
         <p className="text-sm text-muted-foreground">
-          Transformamos operaciones con una plataforma segura y hecha a medida para laboratorios clínicos.
+          Transformamos operaciones con una plataforma segura y hecha a medida
+          para laboratorios clínicos.
         </p>
       ),
-      image: <Image
-        className='p-[6px] bg-transparent border-2 border-gray-100/25 rounded-[42px] backdrop-blur-lg transition-all duration-700 ease-out hover:scale-105'
-        src='/sislab-app-dark.png'
-        alt='Dispositivo Movil'
-        height={455}
-        width={265}
-        style={{ objectFit: 'contain' }}
-      />
+      image: (
+        <Image
+          className="p-[6px] bg-transparent border-2 border-gray-100/25 rounded-[42px] backdrop-blur-lg transition-all duration-700 ease-out hover:scale-105"
+          src="/sislab-app-dark.png"
+          alt="Dispositivo Movil"
+          height={455}
+          width={265}
+          style={{ objectFit: 'contain' }}
+        />
+      ),
     },
     {
-      title: "AZZ Cristal",
-      description: "Impulsamos la presencia digital de una cristalería con un sitio web elegante y funcional.",
-      variant: "glow",
+      title: 'AZZ Cristal',
+      description:
+        'Impulsamos la presencia digital de una cristalería con un sitio web elegante y funcional.',
+      variant: 'glow',
       button: {
-        variant: "default",
-        label: "Ver sitio",
-        href: "https://azz-cristal.kaabcloud.com/",
+        variant: 'default',
+        label: 'Ver sitio',
+        href: 'https://azz-cristal.kaabcloud.com/',
       },
       children: (
         <div>
           <p className="text-sm text-muted-foreground">
-            Diseñado a medida para destacar sus proyectos y facilitar el contacto con nuevos clientes.
+            Diseñado a medida para destacar sus proyectos y facilitar el
+            contacto con nuevos clientes.
           </p>
           <Image
-            className='mx-auto m-8 rounded-[42px] backdrop-blur-lg transition-all duration-700 ease-out hover:scale-105'
-            src='/azz-cristal-overview.jpg'
-            alt='Dispositivo Movil'
+            className="mx-auto m-8 rounded-[42px] backdrop-blur-lg transition-all duration-700 ease-out hover:scale-105"
+            src="/azz-cristal-overview.jpg"
+            alt="Dispositivo Movil"
             height={265}
             width={455}
             style={{ objectFit: 'contain' }}
           />
-
         </div>
       ),
-    }
+    },
   ],
-  className = "",
+  className = '',
 }: ProjectsProps) {
   return (
     <Section className={cn(className)} id={id}>
@@ -92,14 +95,11 @@ export default function Projects({
         {projects !== false && projects.length > 0 && (
           <div className="grid grid-cols-1 gap-8 w-full">
             {projects.map((project) => (
-              <Card
-                key={project.title}
-                {...project}
-              />
+              <Card key={project.title} {...project} />
             ))}
           </div>
         )}
       </div>
     </Section>
   );
-} 
+}

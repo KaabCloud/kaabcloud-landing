@@ -1,9 +1,7 @@
+import { ReactNode } from 'react';
 
-
-import { ReactNode } from "react";
-
-import { Item, ItemDescription,ItemIcon, ItemTitle } from "../../ui/item";
-import { Section } from "../../ui/section";
+import { Item, ItemDescription, ItemIcon, ItemTitle } from '../../ui/item';
+import { Section } from '../../ui/section';
 
 interface ItemProps {
   title: string;
@@ -19,32 +17,37 @@ interface ItemsProps {
 }
 
 export default function Items({
-  title = "Nuestros servicios",
+  title = 'Nuestros servicios',
   items = [
     {
-      title: "🛠 Desarrollo de Software a Medida",
-      description: "Creamos soluciones digitales totalmente personalizadas que se adaptan a las necesidades específicas de tu empresa."
-    },
-    {
-      title: "🤖 Marketing Digital con Herramientas de IA",
-      description: "Impulsa tus ventas y posicionamiento utilizando campañas inteligentes potenciadas por inteligencia artificial."
-    },
-    {
-      title: "🔄 Transformación Digital / Digitalización de Procesos",
+      title: '🛠 Desarrollo de Software a Medida',
       description:
-        "Modernizamos tus operaciones con tecnología que optimiza tiempos, reduce errores y mejora la eficiencia.",
+        'Creamos soluciones digitales totalmente personalizadas que se adaptan a las necesidades específicas de tu empresa.',
     },
     {
-      title: "🧠 Diagnóstico para Automatización de Procesos",
-      description: "Analizamos tus flujos actuales y detectamos oportunidades para automatizar tareas repetitivas y acelerar resultados."
+      title: '🤖 Marketing Digital con Herramientas de IA',
+      description:
+        'Impulsa tus ventas y posicionamiento utilizando campañas inteligentes potenciadas por inteligencia artificial.',
     },
     {
-      title: "💼 Consultoría Tecnológica Empresarial",
-      description: "Te asesoramos estratégicamente para que tomes decisiones tecnológicas que impulsen el crecimiento de tu negocio."
+      title: '🔄 Transformación Digital / Digitalización de Procesos',
+      description:
+        'Modernizamos tus operaciones con tecnología que optimiza tiempos, reduce errores y mejora la eficiencia.',
     },
     {
-      title: "🌐 Presencia de tu Negocio en Línea",
-      description: "Diseñamos y desarrollamos tu sitio web para que tengas visibilidad profesional y efectiva en internet."
+      title: '🧠 Diagnóstico para Automatización de Procesos',
+      description:
+        'Analizamos tus flujos actuales y detectamos oportunidades para automatizar tareas repetitivas y acelerar resultados.',
+    },
+    {
+      title: '💼 Consultoría Tecnológica Empresarial',
+      description:
+        'Te asesoramos estratégicamente para que tomes decisiones tecnológicas que impulsen el crecimiento de tu negocio.',
+    },
+    {
+      title: '🌐 Presencia de tu Negocio en Línea',
+      description:
+        'Diseñamos y desarrollamos tu sitio web para que tengas visibilidad profesional y efectiva en internet.',
     },
   ],
   id,

@@ -1,5 +1,4 @@
-
-import { Section } from "../../ui/section";
+import { Section } from '../../ui/section';
 
 interface StatItemProps {
   label?: string;
@@ -18,20 +17,21 @@ export default function Stats({
   id = 'stats',
   items = [
     {
-      label: "Mas de ",
+      label: 'Mas de ',
       value: 10000,
-      description: "Horas de desarrollo",
+      description: 'Horas de desarrollo',
     },
     {
-      label: "Mas de",
+      label: 'Mas de',
       value: 10,
-      description: " Herramientas tecnológicas y servicios digitales para tu negocio",
+      description:
+        ' Herramientas tecnológicas y servicios digitales para tu negocio',
     },
     {
-      label: "Mas de",
+      label: 'Mas de',
       value: 4,
-      description: " Años de desarrollo de software de alta exigencia",
-    }
+      description: ' Años de desarrollo de software de alta exigencia',
+    },
   ],
   className,
 }: StatsProps) {
@@ -55,7 +55,9 @@ export default function Stats({
                 )}
                 <div className="flex items-baseline gap-2">
                   <div className="from-foreground to-foreground dark:to-brand bg-linear-to-r bg-clip-text text-5xl font-bold text-transparent drop-shadow-[2px_1px_24px_var(--brand-foreground)] transition-all duration-300 sm:text-6xl md:text-7xl">
-                    {typeof item.value === 'number' ? item.value.toLocaleString() : item.value}
+                    {typeof item.value === 'number'
+                      ? item.value.toLocaleString()
+                      : item.value}
                   </div>
                   {item.suffix && (
                     <div className="text-brand text-3xl font-bold">

@@ -1,15 +1,15 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
-import { cn } from "@/lib/utils";
+import { cn } from '@/lib/utils';
 
-import LaunchUI from "../../logos/launch-ui";
+import LaunchUI from '../../logos/launch-ui';
 import {
   Footer,
   FooterBottom,
   FooterColumn,
   FooterContent,
-} from "../../ui/footer";
-import { ModeToggle } from "../../ui/mode-toggle";
+} from '../../ui/footer';
+import { ModeToggle } from '../../ui/mode-toggle';
 
 interface FooterLink {
   text: string;
@@ -33,42 +33,48 @@ interface FooterProps {
 
 export default function FooterSection({
   logo = <LaunchUI />,
-  name = "KaabCloud",
+  name = 'KaabCloud',
   columns = [
     {
-      title: "Servicios",
+      title: 'Servicios',
       links: [
-        { text: "Proyectos", href: "#projects" },
-        { text: "Estadísticas", href: "#stats" },
+        { text: 'Proyectos', href: '#projects' },
+        { text: 'Estadísticas', href: '#stats' },
       ],
     },
     {
-      title: "Compañía",
+      title: 'Compañía',
       links: [
-        { text: "Sobre Nosotros", href: "#about" },
-        { text: "Contacto", href: "#contact" },
+        { text: 'Sobre Nosotros', href: '#about' },
+        { text: 'Contacto', href: '#contact' },
       ],
     },
     {
-      title: "Redes Sociales",
+      title: 'Redes Sociales',
       links: [
-        { text: "LinkedIn", href: "https://www.linkedin.com/company/kaabcloud" },
-        { text: "Facebook", href: "https://www.facebook.com/profile.php?id=61577010023224" },
-        { text: "Instagram", href: "https://www.instagram.com/kaabcloud/" },
-        { text: "Email", href: "mailto:contact@kaabcloud.com" },
+        {
+          text: 'LinkedIn',
+          href: 'https://www.linkedin.com/company/kaabcloud',
+        },
+        {
+          text: 'Facebook',
+          href: 'https://www.facebook.com/profile.php?id=61577010023224',
+        },
+        { text: 'Instagram', href: 'https://www.instagram.com/kaabcloud/' },
+        { text: 'Email', href: 'mailto:contact@kaabcloud.com' },
       ],
     },
   ],
-  copyright = "© 2024 KaabCloud. Todos los derechos reservados",
+  copyright = '© 2024 KaabCloud. Todos los derechos reservados',
   policies = [
-    { text: "Política de Privacidad", href: "/privacy" },
-    { text: "Términos de Servicio", href: "/terms" },
+    { text: 'Política de Privacidad', href: '/privacy' },
+    { text: 'Términos de Servicio', href: '/terms' },
   ],
   showModeToggle = true,
   className,
 }: FooterProps) {
   return (
-    <footer className={cn("bg-background w-full px-4", className)}>
+    <footer className={cn('bg-background w-full px-4', className)}>
       <div className="max-w-container mx-auto">
         <Footer>
           <FooterContent>
@@ -97,8 +103,8 @@ export default function FooterSection({
             <div>{copyright}</div>
             <div className="flex items-center gap-4">
               {policies.map((policy, index) => (
-                <a 
-                  key={index} 
+                <a
+                  key={index}
                   href={policy.href}
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >

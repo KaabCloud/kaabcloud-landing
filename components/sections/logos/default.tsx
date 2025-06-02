@@ -1,15 +1,15 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
-import { siteConfig } from "@/config/site";
+import { siteConfig } from '@/config/site';
 
-import Figma from "../../logos/figma";
-import React from "../../logos/react";
-import ShadcnUi from "../../logos/shadcn-ui";
-import Tailwind from "../../logos/tailwind";
-import TypeScript from "../../logos/typescript";
-import { Badge } from "../../ui/badge";
-import Logo from "../../ui/logo";
-import { Section } from "../../ui/section";
+import Figma from '../../logos/figma';
+import React from '../../logos/react';
+import ShadcnUi from '../../logos/shadcn-ui';
+import Tailwind from '../../logos/tailwind';
+import TypeScript from '../../logos/typescript';
+import { Badge } from '../../ui/badge';
+import Logo from '../../ui/logo';
+import { Section } from '../../ui/section';
 
 interface LogosProps {
   title?: string;
@@ -20,7 +20,7 @@ interface LogosProps {
 }
 
 export default function Logos({
-  title = "Built with industry-standard tools and best practices",
+  title = 'Built with industry-standard tools and best practices',
   badge = (
     <Badge variant="outline" className="border-brand/30 text-brand">
       Last updated: {siteConfig.stats.updated}

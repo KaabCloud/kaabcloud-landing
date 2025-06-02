@@ -1,7 +1,7 @@
-@import "tailwindcss";
-@import "../styles/utils.css";
+@import 'tailwindcss';
+@import '../styles/utils.css';
 
-@import "tw-animate-css";
+@import 'tw-animate-css';
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -215,7 +215,8 @@
 }
 
 @keyframes gradient-x {
-  0%, 100% {
+  0%,
+  100% {
     background-position: 0% 50%;
   }
   50% {

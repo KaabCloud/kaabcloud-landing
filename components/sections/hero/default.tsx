@@ -1,20 +1,20 @@
-import { ArrowDown, Mail } from "lucide-react";
-import { ReactNode } from "react";
+import { ArrowDown, Mail } from 'lucide-react';
+import { ReactNode } from 'react';
 
-import Whatsapp from "@/components/logos/whatsapp";
-import Glow from "@/components/ui/glow";
-import { GlowButton } from "@/components/ui/glow-button";
-import { Mockup, MockupFrame } from "@/components/ui/mockup";
-import Screenshot from "@/components/ui/screenshot";
-import { Section } from "@/components/ui/section";
-import { cn } from "@/lib/utils";
+import Whatsapp from '@/components/logos/whatsapp';
+import Glow from '@/components/ui/glow';
+import { GlowButton } from '@/components/ui/glow-button';
+import { Mockup, MockupFrame } from '@/components/ui/mockup';
+import Screenshot from '@/components/ui/screenshot';
+import { Section } from '@/components/ui/section';
+import { cn } from '@/lib/utils';
 
-import { Button, type ButtonProps } from "../../ui/button";
+import { Button, type ButtonProps } from '../../ui/button';
 
 interface HeroButtonProps {
   href: string;
   text: string;
-  variant?: ButtonProps["variant"];
+  variant?: ButtonProps['variant'];
   icon?: ReactNode;
   iconRight?: ReactNode;
 }
@@ -30,8 +30,8 @@ interface HeroProps {
 }
 
 export default function Hero({
-  title = "Impulse su negocio con una solución digital avanzada y personalizada",
-  description = "En KaabCloud, ayudamos a las empresas a modernizarse con software inteligente y tecnología de vanguardia.",
+  title = 'Impulse su negocio con una solución digital avanzada y personalizada',
+  description = 'En KaabCloud, ayudamos a las empresas a modernizarse con software inteligente y tecnología de vanguardia.',
   mockup = (
     <Screenshot
       srcLight="/app-light.png"
@@ -41,8 +41,6 @@ export default function Hero({
       height={765}
       className="w-full"
     />
-
-
   ),
   // badge = (
   //   <Badge variant="outline" className="animate-appear">
@@ -59,15 +57,15 @@ export default function Hero({
   buttons = [
     {
       href: "https://wa.me/4443778124?text='Hola, me interesa una consultoría gratuita:'",
-      text: "Consultoria gratuita",
-      variant: "default",
-      icon: <Whatsapp className="mr-2 size-4" />
+      text: 'Consultoria gratuita',
+      variant: 'default',
+      icon: <Whatsapp className="mr-2 size-4" />,
     },
     {
       href: '#contact',
-      text: "Contactanos",
-      variant: "glow",
-      icon: <Mail className="mr-2 size-4" />
+      text: 'Contactanos',
+      variant: 'glow',
+      icon: <Mail className="mr-2 size-4" />,
     },
   ],
   className,
@@ -75,9 +73,9 @@ export default function Hero({
   return (
     <Section
       className={cn(
-        "group h-screen relative overflow-visible pb-0 sm:pb-0 md:pb-0",
-        mockup !== false && "fade-bottom",
-        className,
+        'group h-screen relative overflow-visible pb-0 sm:pb-0 md:pb-0',
+        mockup !== false && 'fade-bottom',
+        className
       )}
     >
       {/* Video de fondo */}
@@ -99,17 +97,23 @@ export default function Hero({
           <h1 className="animate-appear text-3xl leading-tight font-normal text-white drop-shadow-2xl sm:text-4xl md:text-5xl">
             {title}
           </h1>
-          <p className={cn(
-            "text-sm animate-appear  max-w-4xl font-medium text-balance opacity-0 delay-100 sm:text-base",
-            mockup === false ? "relative" : "relative z-10"
-          )}>
+          <p
+            className={cn(
+              'text-sm animate-appear  max-w-4xl font-medium text-balance opacity-0 delay-100 sm:text-base',
+              mockup === false ? 'relative' : 'relative z-10'
+            )}
+          >
             {description}
           </p>
           {buttons !== false && buttons.length > 0 && (
             <div className="animate-appear relative z-10 flex flex-col sm:flex-row justify-center gap-8 opacity-0 delay-300 items-center pt-12">
-              {buttons.map((button, index) => (
-                button.variant === "glow" ? (
-                  <GlowButton key={index} size="lg" className="w-full sm:w-auto">
+              {buttons.map((button, index) =>
+                button.variant === 'glow' ? (
+                  <GlowButton
+                    key={index}
+                    size="lg"
+                    className="w-full sm:w-auto"
+                  >
                     <a href={button.href} className="flex items-center gap-2">
                       {button.icon}
                       {button.text}
@@ -118,7 +122,7 @@ export default function Hero({
                 ) : (
                   <Button
                     key={index}
-                    variant={button.variant || "default"}
+                    variant={button.variant || 'default'}
                     size="lg"
                     asChild
                     className="w-full sm:w-auto"
@@ -129,8 +133,7 @@ export default function Hero({
                     </a>
                   </Button>
                 )
-              ))}
-
+              )}
             </div>
           )}
           {/* GIF de flecha para scroll en versión móvil */}
@@ -140,24 +143,30 @@ export default function Hero({
               className="mt-8 inline-flex items-center gap-2 text-white hover:text-white/80 animate-appear px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full"
             >
               <span className="text-base font-light">Ver detalles</span>
-              <ArrowDown className='h-8' />
+              <ArrowDown className="h-8" />
             </a>
           </div>
           {mockup !== false && (
             <div className="relative w-full pt-12">
-              <MockupFrame className="animate-appear opacity-0 delay-700" size="small">
-                <Mockup className="bg-background/90 w-full rounded-xl border-0" type="responsive">
+              <MockupFrame
+                className="animate-appear opacity-0 delay-700"
+                size="small"
+              >
+                <Mockup
+                  className="bg-background/90 w-full rounded-xl border-0"
+                  type="responsive"
+                >
                   {mockup}
                 </Mockup>
               </MockupFrame>
-              <Glow variant="top" className="animate-appear-zoom opacity-0 delay-1000" />
+              <Glow
+                variant="top"
+                className="animate-appear-zoom opacity-0 delay-1000"
+              />
             </div>
           )}
         </div>
       </div>
-
-
     </Section>
-
   );
 }
