@@ -18,12 +18,12 @@ const GlowButton = forwardRef<HTMLButtonElement, GlowButtonProps>(
         <button
           ref={ref}
           className={cn(
-            "relative px-4 py-2 bg-black rounded-lg leading-none flex items-center justify-center gap-2",
+            "relative text-sm px-4 py-2 bg-black rounded-lg leading-none flex items-center justify-center gap-2",
             "text-white font-medium",
             "transition-colors duration-200",
             "hover:text-white",
-            size === "sm" && "text-sm px-3 py-1.5",
-            size === "lg" && "text-lg px-6 py-2",
+            size === "sm" && "px-3 py-1.5",
+            size === "lg" && "px-6 py-3",
             variant === "outline" && "bg-transparent border border-white/20",
             className
           )}
