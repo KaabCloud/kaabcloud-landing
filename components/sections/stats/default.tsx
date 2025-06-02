@@ -1,4 +1,3 @@
-import { siteConfig } from "@/config/site";
 
 import { Section } from "../../ui/section";
 
