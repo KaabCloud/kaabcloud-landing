@@ -7,7 +7,6 @@ import { GlowButton } from "@/components/ui/glow-button";
 import { Mockup, MockupFrame } from "@/components/ui/mockup";
 import Screenshot from "@/components/ui/screenshot";
 import { Section } from "@/components/ui/section";
-import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
 import { Button, type ButtonProps } from "../../ui/button";
