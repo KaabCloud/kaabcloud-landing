@@ -21,10 +21,10 @@ npm run dev
 
 To compile and generate the image
 ```
-docker compose -f docker-compose.prod.yml --env-file .env build
+docker compose -f docker-compose.prod.yml --env-file .env build --no-cache
 ```
 
 To push the image
 ```
-docker push ghcr.io/kaabcloud/kaabcloud-landing:latest
+docker push ghcr.io/jalejandrorp/kaabcloud-landing:latest
 ```
