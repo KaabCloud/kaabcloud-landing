@@ -97,7 +97,7 @@ export default function Hero({
       <div className="max-w-container mx-auto flex flex-col gap-12 pt-16 sm:gap-24">
         <div className="flex flex-col items-center gap-6 text-center sm:gap-12">
           {/* {badge !== false && badge} */}
-          <h1 className="animate-appear relative z-10 inline-block text-3xl leading-tight font-normal text-balance text-white drop-shadow-2xl sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight">
+          <h1 className="animate-appear relative z-10 inline-block text-3xl leading-tight font-normal text-balance drop-shadow-2xl sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight">
             {title}
           </h1>
           <p className={cn(
