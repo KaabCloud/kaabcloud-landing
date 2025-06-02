@@ -1,0 +1,11 @@
+.git
+node_modules
+.next
+Dockerfile
+dockerfile
+docker-compose.yml
+docker-compose.*.yml
+*.log
+.env*
+.env.*
+/lib/generated
