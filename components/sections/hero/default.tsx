@@ -77,7 +77,7 @@ export default function Hero({
       icon: <Whatsapp className="mr-2 size-4" />
     },
     {
-      href: siteConfig.links.github,
+      href: '#contact',
       text: "Contactanos",
       variant: "glow",
       icon: <Mail className="mr-2 size-4" />
