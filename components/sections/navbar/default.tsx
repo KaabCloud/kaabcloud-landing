@@ -44,9 +44,26 @@ export default function Navbar({
   name = "KaabCloud",
   homeUrl = siteConfig.url,
   mobileLinks = [
-    { text: "Getting Started", href: siteConfig.url },
-    { text: "Components", href: siteConfig.url },
-    { text: "Documentation", href: siteConfig.url },
+    {
+      text: "Servicios",
+      href: '#services',
+    },
+    {
+      text: "Estadisticas",
+      href: '#stats',
+    },
+    {
+      text: "Projectos",
+      href: '#projects',
+    },
+    {
+      text: "Nosotros",
+      href: '#about',
+    },
+    {
+      text: "Contacto",
+      href: '#contact',
+    },
   ],
   actions = [
     { text: "Sign in", href: siteConfig.url, isButton: false },
