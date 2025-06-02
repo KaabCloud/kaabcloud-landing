@@ -1,20 +1,24 @@
-import * as React from "react";
-import { cn } from "@/lib/utils";
-import { Button } from "./button";
 import Link from "next/link";
+import * as React from "react";
 
-interface CardProps {
+import { cn } from "@/lib/utils";
+
+import { Button } from "./button";
+
+export interface CardProps {
   title: string;
   description?: string;
   icon?: React.ReactNode;
   variant?: "default" | "glow" | "glow-brand";
   className?: string;
   children?: React.ReactNode;
+  image?: React.ReactNode;
   button?: {
     variant?: "glow" | "default";
     label: string;
     href: string;
   };
+  hasImage?: boolean;
 }
 
 export function Card({
@@ -24,12 +28,15 @@ export function Card({
   variant = "default",
   className = "",
   children,
+  image,
   button,
+  hasImage = false,
 }: CardProps) {
   return (
     <div
       className={cn(
-        "relative flex flex-col gap-6 overflow-hidden rounded-2xl p-8 shadow-xl",
+        "relative flex overflow-hidden rounded-2xl p-8 shadow-xl",
+        hasImage ? "flex-row" : "flex-col gap-6",
         {
           "glass-1 to-transparent dark:glass-3": variant === "default",
           "glass-2 to-trasparent dark:glass-3 after:content-[''] after:absolute after:-top-[128px] after:left-1/2 after:h-[128px] after:w-[100%] after:max-w-[960px] after:-translate-x-1/2 after:rounded-[50%] dark:after:bg-foreground/30 after:blur-[72px]": variant === "glow",
@@ -44,20 +51,27 @@ export function Card({
           variant === "glow-brand" && "via-brand"
         )}
       />
-      <div className="relative flex flex-col gap-2">
-        <div className="flex items-center gap-2">
-          {icon && <div className="text-muted-foreground">{icon}</div>}
-          <h3 className="text-xl font-semibold">{title}</h3>
+      <div className={cn("flex flex-col gap-6 justify-center", hasImage ? "w-1/2 pr-8" : "w-full")}>
+        <div className="relative flex flex-col gap-2">
+          <div className="flex items-center gap-2">
+            {icon && <div className="text-muted-foreground">{icon}</div>}
+            <h3 className="text-xl font-semibold">{title}</h3>
+          </div>
+          {description && (
+            <p className="text-sm text-muted-foreground">{description}</p>
+          )}
         </div>
-        {description && (
-          <p className="text-sm text-muted-foreground">{description}</p>
+        <div className="relative">{children}</div>
+        {button && (
+          <Button variant={button.variant || "default"} size="lg" asChild>
+            <Link href={button.href}>{button.label}</Link>
+          </Button>
         )}
       </div>
-      <div className="relative">{children}</div>
-      {button && (
-        <Button variant={button.variant || "default"} size="lg" asChild>
-          <Link href={button.href}>{button.label}</Link>
-        </Button>
+      {hasImage && image && (
+        <div className="w-1/2 flex items-center justify-center">
+          {image}
+        </div>
       )}
     </div>
   );

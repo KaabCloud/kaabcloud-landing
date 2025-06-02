@@ -1,6 +1,5 @@
 import { ReactNode } from "react";
 
-import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
 import LaunchUI from "../../logos/launch-ui";
@@ -34,36 +33,37 @@ interface FooterProps {
 
 export default function FooterSection({
   logo = <LaunchUI />,
-  name = "Launch UI",
+  name = "KaabCloud",
   columns = [
     {
-      title: "Product",
+      title: "Servicios",
       links: [
-        { text: "Changelog", href: siteConfig.url },
-        { text: "Documentation", href: siteConfig.url },
+        { text: "Proyectos", href: "#projects" },
+        { text: "Estadísticas", href: "#stats" },
+        { text: "FAQ", href: "#faq" },
       ],
     },
     {
-      title: "Company",
+      title: "Compañía",
       links: [
-        { text: "About", href: siteConfig.url },
-        { text: "Careers", href: siteConfig.url },
-        { text: "Blog", href: siteConfig.url },
+        { text: "Sobre Nosotros", href: "#about" },
+        { text: "Contacto", href: "#contact" },
       ],
     },
     {
-      title: "Contact",
+      title: "Redes Sociales",
       links: [
-        { text: "Discord", href: siteConfig.url },
-        { text: "Twitter", href: siteConfig.url },
-        { text: "Github", href: siteConfig.links.github },
+        { text: "LinkedIn", href: "https://www.linkedin.com/company/kaabcloud" },
+        { text: "Facebook", href: "https://www.facebook.com/profile.php?id=61577010023224" },
+        { text: "Instagram", href: "https://www.instagram.com/kaabcloud/" },
+        { text: "Email", href: "mailto:contact@kaabcloud.com" },
       ],
     },
   ],
-  copyright = "© 2025 Mikołaj Dobrucki. All rights reserved",
+  copyright = "© 2024 KaabCloud. Todos los derechos reservados",
   policies = [
-    { text: "Privacy Policy", href: siteConfig.url },
-    { text: "Terms of Service", href: siteConfig.url },
+    { text: "Política de Privacidad", href: "/privacy" },
+    { text: "Términos de Servicio", href: "/terms" },
   ],
   showModeToggle = true,
   className,
@@ -86,7 +86,7 @@ export default function FooterSection({
                   <a
                     key={linkIndex}
                     href={link.href}
-                    className="text-muted-foreground text-sm"
+                    className="text-muted-foreground text-sm hover:text-primary transition-colors"
                   >
                     {link.text}
                   </a>
@@ -98,7 +98,11 @@ export default function FooterSection({
             <div>{copyright}</div>
             <div className="flex items-center gap-4">
               {policies.map((policy, index) => (
-                <a key={index} href={policy.href}>
+                <a 
+                  key={index} 
+                  href={policy.href}
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
                   {policy.text}
                 </a>
               ))}
