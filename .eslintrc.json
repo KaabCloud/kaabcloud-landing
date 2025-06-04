@@ -1,9 +1,23 @@
 {
   "root": true,
-  "extends": ["next/core-web-vitals", "next/typescript"],
-  "plugins": ["unused-imports", "simple-import-sort"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "extends": [
+    "next/core-web-vitals",
+    "next/typescript",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking"
+  ],
+  "plugins": [
+    "unused-imports",
+    "simple-import-sort",
+    "@typescript-eslint"
+  ],
   "rules": {
-    "no-unused-vars": "off",
+    "no-unused-vars": "off", // Desactiva la regla base
+    "@typescript-eslint/no-unused-vars": "error", // Usa la de TS
     "unused-imports/no-unused-imports": "error",
     "unused-imports/no-unused-vars": [
       "warn",
