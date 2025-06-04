@@ -1,8 +1,7 @@
 export const siteConfig = {
   name: 'KaabCloud',
   url: 'https://kaabcloud.com',
-  getStartedUrl:
-    'https://kaabcloud.com',
+  getStartedUrl: 'https://kaabcloud.com',
   ogImage: 'https://kaabcloud.com/og.jpg',
   description:
     'Impulse su negocio con una solución digital avanzada y personalizada',
