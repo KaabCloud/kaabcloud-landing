@@ -50,9 +50,11 @@ export default function Contact({
         form.reset(); // ← usamos la referencia guardada
       }
     } catch (err) {
-      setError(
-        `Ocurrió un error al enviar el mensaje. Por favor intenta de nuevo. Mensaje: ${err}`
-      );
+      if (typeof err === 'string') {
+        setError(
+          `Ocurrió un error al enviar el mensaje. Por favor intenta de nuevo. Mensaje: ${err}`
+        );
+      }
     } finally {
       setIsLoading(false);
     }
@@ -72,7 +74,9 @@ export default function Contact({
         </p>
 
         <form
-          onSubmit={handleSubmit}
+          onSubmit={(e) => {
+            void handleSubmit(e);
+          }}
           className="w-full max-w-[600px] space-y-6"
         >
           {error && (

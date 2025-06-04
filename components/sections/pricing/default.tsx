@@ -1,6 +1,3 @@
-import { User, Users } from 'lucide-react';
-
-import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 
 import { PricingColumn, PricingColumnProps } from '../../ui/pricing-column';
@@ -17,60 +14,60 @@ export default function Pricing({
   title = 'Build your dream landing page, today.',
   description = 'Get lifetime access to all the components. No recurring fees. Just simple, transparent pricing.',
   plans = [
-    {
-      name: 'Free',
-      description: 'For everyone starting out on a website for their big idea',
-      price: 0,
-      priceNote: 'Free and open-source forever.',
-      cta: {
-        variant: 'glow',
-        label: 'Get started for free',
-        href: '/docs/getting-started/introduction',
-      },
-      features: [
-        '1 website template',
-        '9 blocks and sections',
-        '4 custom animations',
-      ],
-      variant: 'default',
-      className: 'hidden lg:flex',
-    },
-    {
-      name: 'Pro',
-      icon: <User className="size-4" />,
-      description: 'For early-stage founders, solopreneurs and indie devs',
-      price: 99,
-      priceNote: 'Lifetime access. Free updates. No recurring fees.',
-      cta: {
-        variant: 'default',
-        label: 'Get all-access',
-        href: siteConfig.pricing.pro,
-      },
-      features: [
-        `${siteConfig.stats.websiteTemplates} website templates`,
-        `${siteConfig.stats.appTemplates} app templates`,
-        `${siteConfig.stats.sections} blocks and sections`,
-        `${siteConfig.stats.illustrations} illustrations`,
-        `${siteConfig.stats.animations} custom animations`,
-      ],
-      variant: 'glow-brand',
-    },
-    {
-      name: 'Pro Team',
-      icon: <Users className="size-4" />,
-      description: 'For teams and agencies working on cool products together',
-      price: 499,
-      priceNote: 'Lifetime access. Free updates. No recurring fees.',
-      cta: {
-        variant: 'default',
-        label: 'Get all-access for your team',
-        href: siteConfig.pricing.team,
-      },
-      features: [
-        'All the templates, components and sections available for your entire team',
-      ],
-      variant: 'glow',
-    },
+    // {
+    //   name: 'Free',
+    //   description: 'For everyone starting out on a website for their big idea',
+    //   price: 0,
+    //   priceNote: 'Free and open-source forever.',
+    //   cta: {
+    //     variant: 'glow',
+    //     label: 'Get started for free',
+    //     href: '/docs/getting-started/introduction',
+    //   },
+    //   features: [
+    //     '1 website template',
+    //     '9 blocks and sections',
+    //     '4 custom animations',
+    //   ],
+    //   variant: 'default',
+    //   className: 'hidden lg:flex',
+    // },
+    // {
+    //   name: 'Pro',
+    //   icon: <User className="size-4" />,
+    //   description: 'For early-stage founders, solopreneurs and indie devs',
+    //   price: 99,
+    //   priceNote: 'Lifetime access. Free updates. No recurring fees.',
+    //   cta: {
+    //     variant: 'default',
+    //     label: 'Get all-access',
+    //     href: siteConfig.pricing.pro,
+    //   },
+    //   features: [
+    //     `${siteConfig.stats.websiteTemplates} website templates`,
+    //     `${siteConfig.stats.appTemplates} app templates`,
+    //     `${siteConfig.stats.sections} blocks and sections`,
+    //     `${siteConfig.stats.illustrations} illustrations`,
+    //     `${siteConfig.stats.animations} custom animations`,
+    //   ],
+    //   variant: 'glow-brand',
+    // },
+    // {
+    //   name: 'Pro Team',
+    //   icon: <Users className="size-4" />,
+    //   description: 'For teams and agencies working on cool products together',
+    //   price: 499,
+    //   priceNote: 'Lifetime access. Free updates. No recurring fees.',
+    //   cta: {
+    //     variant: 'default',
+    //     label: 'Get all-access for your team',
+    //     href: siteConfig.pricing.team,
+    //   },
+    //   features: [
+    //     'All the templates, components and sections available for your entire team',
+    //   ],
+    //   variant: 'glow',
+    // },
   ],
   className = '',
 }: PricingProps) {

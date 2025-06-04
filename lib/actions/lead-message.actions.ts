@@ -17,7 +17,7 @@ export async function createLeadMessage(
   } catch (error) {
     console.error(error);
     return {
-      error: `Error while creating lead message ${error}`,
+      error: `Error while creating lead message, check server logs for more details.`,
     };
   }
 }
