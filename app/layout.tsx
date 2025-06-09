@@ -5,57 +5,46 @@ import type { Metadata } from 'next';
 import { ThemeProvider } from '@/components/contexts/theme-provider';
 import { inter } from '@/lib/fonts';
 
-import { siteConfig } from '../config/site';
-
 export const metadata: Metadata = {
-  title: {
-    default: siteConfig.name,
-    template: `%s - ${siteConfig.name}`,
-  },
-  metadataBase: new URL(siteConfig.getStartedUrl),
-  description: siteConfig.description,
+  title: "KaabCloud | Desarrollo de Software a Medida y Transformación Digital",
+  description:
+    "Impulsa tu negocio con soluciones digitales personalizadas. Desarrollo de software, marketing digital con IA, digitalización y consultoría tecnológica para empresas.",
   keywords: [
-    'Landing page template',
-    'Components',
-    'Shadcn',
-    'Next.js',
-    'React',
-    'Tailwind CSS',
-    'Radix UI',
+    "desarrollo de software a medida",
+    "transformación digital",
+    "consultoría tecnológica",
+    "marketing digital con IA",
+    "digitalización de procesos",
+    "automatización de procesos",
+    "presencia en línea",
+    "software personalizado",
+    "KaabCloud"
   ],
-  authors: [
-    {
-      name: 'Mikolaj Dobrucki',
-      url: 'https://mikolajdobrucki.com',
-    },
-  ],
-  creator: 'mikolajdobrucki',
   openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    url: siteConfig.getStartedUrl,
-    title: siteConfig.name,
-    description: siteConfig.description,
-    siteName: siteConfig.name,
+    title: "KaabCloud | Soluciones Digitales Personalizadas para Empresas",
+    description:
+      "Moderniza tu empresa con software inteligente, marketing digital con inteligencia artificial y digitalización de procesos. Consultoría tecnológica para el crecimiento.",
+    url: "https://kaabcloud.com",
+    type: "website",
     images: [
       {
-        url: siteConfig.ogImage,
-        width: 1200,
-        height: 630,
-        alt: siteConfig.name,
+        url: "/og.png", // imagen optimizada para OG (1200x630 px)
+        width: 605,
+        height: 387,
+        alt: "KaabCloud - Soluciones digitales personalizadas",
       },
     ],
   },
   twitter: {
-    card: 'summary_large_image',
-    title: siteConfig.name,
-    description: siteConfig.description,
-    images: [siteConfig.ogImage],
-    creator: '@mikolajdobrucki',
+    card: "summary_large_image",
+    title: "KaabCloud | Desarrollo de Software a Medida y Marketing Digital con IA",
+    description:
+      "Impulsa tu negocio con tecnología avanzada y personalizada. Consultoría, automatización y presencia digital para empresas.",
+    images: ["/og.png"],
   },
   icons: {
-    icon: '/favicon.svg',
-    apple: '/apple-touch-icon.png',
+    icon: "/favicon-kaabcloud.svg",
+    apple: "/favicon-kaabcloud.svg",
   },
 };
 
@@ -65,7 +54,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" style={{ colorScheme: 'dark' }} className="dark">
+    <html lang="es" style={{ colorScheme: 'dark' }} className="dark">
       <body
         className={`${inter.className} bg-background antialiased`}
         suppressHydrationWarning

@@ -1,8 +1,8 @@
 export const siteConfig = {
-  name: 'KaabCloud',
+  name: 'Ayudamos a empresas a modernizar sus procesos con tecnología inteligente, optimizando su productividad y eficiencia. | KaabCloud',
   url: 'https://kaabcloud.com',
   getStartedUrl: 'https://kaabcloud.com',
-  ogImage: 'https://kaabcloud.com/og.jpg',
+  ogImage: 'https://kaabcloud.com/og.png',
   description:
     'Impulse su negocio con una solución digital avanzada y personalizada',
   links: {
